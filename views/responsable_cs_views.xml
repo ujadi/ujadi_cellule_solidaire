@@ -1,0 +1,16 @@
+<odoo>
+   <record id="cellule_solidaire_view_tree" model="ir.ui.view">
+        <field name="name">responsable.cs.list</field>
+        <field name="model">responsable.cs</field>
+        <field name="arch" type="xml">
+            <list string="Channel" editable="bottom">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+    <record id="responsable_cs_action" model="ir.actions.act_window">
+        <field name="name">Responsable Cs</field>
+        <field name="res_model">responsable.cs</field>
+        <field name="view_mode">form</field>
+    </record>
+</odoo>

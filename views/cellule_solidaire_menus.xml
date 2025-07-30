@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+
+    <!-- Menu racine -->
+    <menuitem id="cellule_solidaire_menu_root"
+              name="Cellule Solidaire"
+              sequence="10"/>
+
+    <!-- Menu Cellules (enfant direct) -->
+    <menuitem id="cellule_solidaire_menu_action"
+              name="Cellules"
+              parent="cellule_solidaire_menu_root"
+              action="cellule_solidaire_ujadi.cellule_solidaire_action"
+              sequence="20"/>
+
+    <!-- Menu Responsables (enfant direct) -->
+    <menuitem id="responsable_cs_menu_action"
+              name="Responsables"
+              parent="cellule_solidaire_menu_action"
+              action="cellule_solidaire_ujadi.responsable_cs_action"
+              sequence="30"/>
+
+    <!-- Menu Membres (enfant direct) -->
+    <menuitem id="membre_cs_menu_action"
+              name="Membres"
+              parent="cellule_solidaire_menu_action"
+              action="cellule_solidaire_ujadi.membre_cs_action"
+              sequence="40"/>
+
+  </data>
+</odoo>

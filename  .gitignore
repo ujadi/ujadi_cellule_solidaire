@@ -1,0 +1,58 @@
+# Byte-compiled / cache / temporary files
+*.py[cod]
+__pycache__/
+*.log
+*.swp
+*.tmp
+*.bak
+
+# Environment
+.env
+*.env
+
+# Virtual environment
+venv/
+ENV/
+env/
+.odoo-venv/
+*.egg-info/
+
+# Odoo specifics
+*.zip
+*.tar.gz
+*.db
+*.sql
+*.sqlite
+*.pot
+*.mo
+
+# Node / frontend
+node_modules/
+*.tsbuildinfo
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Build / Dist
+/dist/
+/build/
+
+# Test outputs
+/coverage/
+htmlcov/
+*.cover
+.tox/
+
+# Pytest / unittest
+.pytest_cache/
+nosetests.xml
+test-results.xml
