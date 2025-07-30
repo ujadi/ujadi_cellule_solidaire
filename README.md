@@ -1,6 +1,6 @@
 # Cellule Solidaire UJADI
 
-Un module Odoo pour la gestion des **cellules solidaires de l’UJADI** (Union des Jeunes Adventistes pour le Développement Intégral).
+Un module Odoo pour la gestion des **cellules solidaires de l’UJADI** (Union des Jeunes Actifs pour le Développement Intégral).
 
 ## 🔍 Fonctionnalités principales
 
@@ -45,7 +45,7 @@ cellule_solidaire_ujadi/
 │   ├── responsable_cs_views.xml
 │   └── cellule_solidaire_menus.xml
 └── README.md
-
+```
 ## 🚀 Installation
 
 1. Cloner le dépôt dans le dossier `custom_addons` :
