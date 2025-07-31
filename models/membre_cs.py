@@ -7,6 +7,11 @@ class MembreCs(models.Model):
 
     name = fields.Char(string='Nom complet', required=True)
     phone_number = fields.Char(string='Téléphone', required=True)
+    sexe = fields.Selection([
+    ('male', 'Male'),
+    ('female', 'Female'),
+    ('other', 'Other'),],
+    string='Gender')
     birth_day = fields.Date(string='Date de Naissance')
     email = fields.Char(string='Email')
     adress = fields.Char(string="Adresse") 

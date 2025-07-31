@@ -12,21 +12,22 @@
               name="Cellules"
               parent="cellule_solidaire_menu_root"
               action="cellule_solidaire_ujadi.cellule_solidaire_action"
-              sequence="20"/>
+              sequence="10"/>
+    
 
     <!-- Menu Responsables (enfant direct) -->
     <menuitem id="responsable_cs_menu_action"
               name="Responsables"
-              parent="cellule_solidaire_menu_action"
+              parent="cellule_solidaire_menu_root"
               action="cellule_solidaire_ujadi.responsable_cs_action"
-              sequence="30"/>
+              sequence="20"/>
 
     <!-- Menu Membres (enfant direct) -->
     <menuitem id="membre_cs_menu_action"
               name="Membres"
-              parent="cellule_solidaire_menu_action"
+              parent="cellule_solidaire_menu_root"
               action="cellule_solidaire_ujadi.membre_cs_action"
-              sequence="40"/>
+              sequence="30"/>
 
   </data>
 </odoo>

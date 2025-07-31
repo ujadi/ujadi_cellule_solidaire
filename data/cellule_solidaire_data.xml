@@ -1,0 +1,89 @@
+<odoo>
+    <record id="cellule_les_courageux" model="cellule.solidaire">
+        <field name="name">LES COURAGEUX</field>
+    </record>
+    <record id="cellule_les_rayons_d_espoires" model="cellule.solidaire">
+        <field name="name">LES RAYONS D'ESPOIRES</field>
+    </record>
+    <record id="cellule_unis_pour_servir" model="cellule.solidaire">
+        <field name="name">UNIS POUR SERVIR</field>
+    </record>
+    <record id="cellule_les_constructeurs_de_paix" model="cellule.solidaire">
+        <field name="name">LES CONSTRUCTEURS DE PAIX</field>
+    </record>
+    <record id="cellule_les_amis_de_jesus" model="cellule.solidaire">
+        <field name="name">LES AMIS DE JESUS</field>
+    </record>
+    <record id="cellule_watetezi_wa_haki" model="cellule.solidaire">
+        <field name="name">WATETEZI WA HAKI</field>
+    </record>
+    <record id="cellule_wanavipaji" model="cellule.solidaire">
+        <field name="name">WANAVIPAJI</field>
+    </record>
+    <record id="cellule_moyo_wa_uruma" model="cellule.solidaire">
+        <field name="name">MOYO WA URUMA</field>
+    </record>
+    <record id="cellule_nyota_njema" model="cellule.solidaire">
+        <field name="name">NYOTA NJEMA</field>
+    </record>
+    <record id="cellule_nuru_ya_mbinguu" model="cellule.solidaire">
+        <field name="name">NURU YA MBINGU</field>
+    </record>
+    <record id="cellule_mere" model="cellule.solidaire">
+        <field name="name">merE</field>
+    </record>
+    <record id="cellule_hakiba_yetu" model="cellule.solidaire">
+        <field name="name">HAKIBA YETU</field>
+    </record>
+    <record id="cellule_ujadi" model="cellule.solidaire">
+        <field name="name">UJADI</field>
+    </record>
+    <record id="cellule_farijika" model="cellule.solidaire">
+        <field name="name">FARIJIKA</field>
+    </record>
+    <record id="cellule_les_faibles_s_eliminent" model="cellule.solidaire">
+        <field name="name">LES FAIBLES S'ELIMINENT</field>
+    </record>
+    <record id="cellule_tutaweza" model="cellule.solidaire">
+        <field name="name">TUTAWEZA</field>
+    </record>
+    <record id="cellule_sujaa" model="cellule.solidaire">
+        <field name="name">SUJAA</field>
+    </record>
+    <record id="cellule_ahadi_za_bwana" model="cellule.solidaire">
+        <field name="name">AHADI ZA BWANA</field>
+    </record>
+    <record id="cellule_tuendeleye" model="cellule.solidaire">
+        <field name="name">TUENDELEYE</field>
+    </record>
+    <record id="cellule_amani" model="cellule.solidaire">
+        <field name="name">AMANI</field>
+    </record>
+    <record id="cellule_nguzo" model="cellule.solidaire">
+        <field name="name">NGUZO</field>
+    </record>
+    <record id="cellule_tuinuane" model="cellule.solidaire">
+        <field name="name">TUINUANE</field>
+    </record>
+    <record id="cellule_tuungane" model="cellule.solidaire">
+        <field name="name">TUUNGANE</field>
+    </record>
+    <record id="cellule_akili_ni_mali" model="cellule.solidaire">
+        <field name="name">AKILI NI MALI</field>
+    </record>
+    <record id="cellule_mungu_njo_chef" model="cellule.solidaire">
+        <field name="name">MUNGU NJO CHEF</field>
+    </record>
+    <record id="cellule_mungu_ni_jibu" model="cellule.solidaire">
+        <field name="name">MUNGU NI JIBU</field>
+    </record>
+    <record id="cellule_les_patriotes" model="cellule.solidaire">
+        <field name="name">LES PATRIOTES</field>
+    </record>
+    <record id="cellule_yesu_nguzo" model="cellule.solidaire">
+        <field name="name">YESU NGUZO</field>
+    </record>
+    <record id="cellule_amkeni" model="cellule.solidaire">
+        <field name="name">AMKENI</field>
+    </record>
+</odoo>

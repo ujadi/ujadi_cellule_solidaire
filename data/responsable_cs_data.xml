@@ -1,0 +1,127 @@
+<odoo>
+    <record id="responsable_01" model="responsable.cs">
+        <field name="name">Aimé Safari</field>
+        <field name="phone">+243971000001</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_02" model="responsable.cs">
+        <field name="name">Béatrice Mukuna</field>
+        <field name="phone">+243971000002</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_03" model="responsable.cs">
+        <field name="name">Claude Kambale</field>
+        <field name="phone">+243971000003</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_04" model="responsable.cs">
+        <field name="name">Diane Iragi</field>
+        <field name="phone">+243971000004</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_05" model="responsable.cs">
+        <field name="name">Eric Bisimwa</field>
+        <field name="phone">+243971000005</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_06" model="responsable.cs">
+        <field name="name">Florence Byamungu</field>
+        <field name="phone">+243971000006</field>
+        <field name="sexe">female</field>
+    </record>
+    <record id="responsable_07" model="responsable.cs">
+        <field name="name">Gabriel Mbusa</field>
+        <field name="phone">+243971000007</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_08" model="responsable.cs">
+        <field name="name">Hélène Uwamahoro</field>
+        <field name="phone">+243971000008</field>
+         <field name="sexe">female</field>
+    </record>
+    <record id="responsable_09" model="responsable.cs">
+        <field name="name">Isaac Mumbere</field>
+        <field name="phone">+243971000009</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_10" model="responsable.cs">
+        <field name="name">Jeanne Nyirabintu</field>
+        <field name="phone">+243971000010</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_11" model="responsable.cs">
+        <field name="name">Kévin Bahati</field>
+        <field name="phone">+243971000011</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_12" model="responsable.cs">
+        <field name="name">Lucie Kamate</field>
+        <field name="phone">+243971000012</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_13" model="responsable.cs">
+        <field name="name">Marc Luboya</field>
+        <field name="phone">+243971000013</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_14" model="responsable.cs">
+        <field name="name">Nadia Kavira</field>
+        <field name="phone">+243971000014</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_15" model="responsable.cs">
+        <field name="name">Olivier Mwami</field>
+        <field name="phone">+243971000015</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_16" model="responsable.cs">
+        <field name="name">Prisca Kasereka</field>
+        <field name="phone">+243971000016</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_17" model="responsable.cs">
+        <field name="name">Quentin Safari</field>
+        <field name="phone">+243971000017</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_18" model="responsable.cs">
+        <field name="name">Rachel Iragi</field>
+        <field name="phone">+243971000018</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_19" model="responsable.cs">
+        <field name="name">Samuel Bashonga</field>
+        <field name="phone">+243971000019</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_20" model="responsable.cs">
+        <field name="name">Thérèse Kambale</field>
+        <field name="phone">+243971000020</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_21" model="responsable.cs">
+        <field name="name">Ulrich Kambasu</field>
+        <field name="phone">+243971000021</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_22" model="responsable.cs">
+        <field name="name">Valérie Mukwege</field>
+        <field name="phone">+243971000022</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_23" model="responsable.cs">
+        <field name="name">William Kivuya</field>
+        <field name="phone">+243971000023</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_24" model="responsable.cs">
+        <field name="name">Yvonne Kasereka</field>
+        <field name="phone">+243971000024</field>
+        <field name="sexe">male</field>
+    </record>
+    <record id="responsable_25" model="responsable.cs">
+        <field name="name">Zacharie Musubao</field>
+        <field name="phone">+243971000025</field>
+        <field name="sexe">male</field>
+    </record>
+</odoo>

@@ -5,13 +5,75 @@
         <field name="arch" type="xml">
             <list string="Channel" editable="bottom">
                 <field name="name"/>
+                <field name="entity"/>
+                <field name="responsable_id" widget="badge"/>
+                <field name="state" widget="badge" statusbar_visible="draft,confirmed"/>
+                <field name="membre_ids" widget="many2many_tags"/>
             </list>
         </field>
     </record>
+
+    <record id="cellule_solidaire_view_form" model="ir.ui.view">
+        <field name="name">cellule.solidaire.form</field>
+        <field name="model">cellule.solidaire</field>
+        <field name="arch" type="xml">
+            <form string="Cellule Solidaire" >
+                <header>
+                     <field name="state" widget="statusbar" statusbar_visible="draft,confirmed" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" placeholder="eg.: USHUHUDA"/>
+                        <field name="entity" placeholder="eg.: GOMA VILLE"/>                  
+                    </group>
+                    <notebook>
+                        <page string="Identification Du Responsable">
+                                <field name="responsable_id" mode="list">
+                                    <list editable="bottom">
+                                        <!-- <control>
+                                            <create string="Add a student"/>
+                                            <create string="Add a section"           
+                                            context="{'default_type': 'section'}"/>
+                                            <create string="Add a note"
+                                            context="{'default_type': 'note'}"/>
+                                        </control> -->
+                                        <field name="name"/>
+                                        <field name="phone"/>
+                                        <field name="sexe"/>
+                                        <field name="email" invisible="1"/>
+                                        <field name="quartier" invisible="1"/>
+                                        <field name="avenue" invisible="1"/>
+                                    </list>                                
+                                </field>                     
+
+                        </page>
+                        <page string="Les Membres De La Cellule Solidaire">
+                            <field name="membre_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="cellule_solidaire_view_search" model="ir.ui.view">
+        <field name="name">cellule.solidaire.search</field>
+        <field name="model">cellule.solidaire</field>
+        <field name="arch" type="xml">
+            <search string="Cellule Solidaire Search">
+                <field name="name"/>
+                <field name="entity"/>
+                <field name="responsable_id"/>
+                <field name="membre_ids"/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
     <record id="cellule_solidaire_action" model="ir.actions.act_window">
         <field name="name">Cellule Solidaire Action</field>
         <field name="res_model">cellule.solidaire</field>
-        <field name="view_mode">form</field>
+        <field name="view_mode">list,form,search</field>
     </record>
 
 </odoo>

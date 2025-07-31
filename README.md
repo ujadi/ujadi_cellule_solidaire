@@ -46,6 +46,7 @@ cellule_solidaire_ujadi/
 │   └── cellule_solidaire_menus.xml
 └── README.md
 ```
+
 ## 🚀 Installation
 
 1. Cloner le dépôt dans le dossier `custom_addons` :
@@ -55,14 +56,7 @@ cellule_solidaire_ujadi/
    git clone https://github.com/ujadi/ujadi_cellule_solidaire.git
 
 
-
-
-- Ici, la ligne avec les commandes est dans un **bloc de code** délimité par trois backticks ```` ```bash ```` pour que ça s’affiche joliment en console.
-- Le reste est en liste numérotée ou simple texte, avec des retours à la ligne doubles `  ` pour faire un saut de ligne simple.
-
----
-
-### 2. Section ✅ À venir
+2. Section ✅ À venir
 
 ```markdown
 ## ✅ À venir

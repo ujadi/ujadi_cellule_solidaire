@@ -3,14 +3,52 @@
         <field name="name">responsable.cs.list</field>
         <field name="model">responsable.cs</field>
         <field name="arch" type="xml">
-            <list string="Channel" editable="bottom">
+            <list>
                 <field name="name"/>
+                <field name="phone"/>
+                <field name="sexe"/>
+                <field name="state" widget="badge" statusbar_visible="draft,confirmed"/>
+                <field name="email" invisible="1"/>
+                <field name="quartier" invisible="1"/>
+                <field name="avenue" invisible="1"/>
             </list>
         </field>
     </record>
+    <record id="responsable_cs_view_form" model="ir.ui.view">
+        <field name="name">responsable.cs.form</field>
+        <field name="model">responsable.cs</field>
+        <field name="arch" type="xml">
+            <form string="Responsable Cs">
+                <sheet>
+                    <notebook>
+                        <page string="Identification Du Responsable">
+                            <field name="name" placeholder="eg.: USHUHUDA"/>
+                            <field name="phone" placeholder="eg.: +243 99 999 999"/>
+                            <field name="sexe"/>
+                            <field name="email" invisible="1"/>
+                            <field name="quartier" invisible="1"/>
+                            <field name="avenue" invisible="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="responsable_cs_view_search" model="ir.ui.view">
+        <field name="name">responsable.cs.search</field>
+        <field name="model">responsable.cs</field>
+        <field name="arch" type="xml">
+            <search string="Responsable Search">
+                <field name="name"/>
+                <field name="phone"/>
+            </search>
+        </field>
+    </record>
+
     <record id="responsable_cs_action" model="ir.actions.act_window">
         <field name="name">Responsable Cs</field>
         <field name="res_model">responsable.cs</field>
-        <field name="view_mode">form</field>
+        <field name="view_mode">list,form</field>
     </record>
 </odoo>
