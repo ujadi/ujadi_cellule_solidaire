@@ -7,7 +7,7 @@
                 <field name="name"/>
                 <field name="phone"/>
                 <field name="sexe"/>
-                <field name="state" widget="badge" statusbar_visible="draft,confirmed"/>
+                <!-- <field name="state" widget="badge" statusbar_visible="draft,confirmed"/> -->
                 <field name="email" invisible="1"/>
                 <field name="quartier" invisible="1"/>
                 <field name="avenue" invisible="1"/>
@@ -20,16 +20,14 @@
         <field name="arch" type="xml">
             <form string="Responsable Cs">
                 <sheet>
-                    <notebook>
-                        <page string="Identification Du Responsable">
+                    <group>
                             <field name="name" placeholder="eg.: USHUHUDA"/>
                             <field name="phone" placeholder="eg.: +243 99 999 999"/>
                             <field name="sexe"/>
                             <field name="email" invisible="1"/>
                             <field name="quartier" invisible="1"/>
                             <field name="avenue" invisible="1"/>
-                        </page>
-                    </notebook>
+                    </group>
                 </sheet>
             </form>
         </field>

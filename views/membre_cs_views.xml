@@ -3,18 +3,47 @@
         <field name="name">membre.cs.list</field>
         <field name="model">membre.cs</field>
         <field name="arch" type="xml">
-            <list string="Channel" editable="bottom">
+            <list>
                 <field name="name"/>
                 <field name="phone_number"/>
                 <field name="sexe"/>
+                <field name="province"/>
+                <field name="ville"/>
+                <field name="commune"/>
+                <field name="quartier"/>
+                <field name="avenue" />    
                 <field name="email" invisible="1"/>
-                <field name="quartier" invisible="1"/>
-                <field name="avenue" invisible="1"/>    
             </list>
         </field>
     </record>
-    <!-- <record id="membre_cs_view_form" model="ir.ui.view"> -->
     
+    <record id="membre_cs_view_form" model="ir.ui.view">
+        <field name="name">membre.cs.form</field>
+        <field name="model">membre.cs</field>
+        <field name="arch" type="xml">
+            <form string="Les Membres Cellule Solidaire">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="photo" widget="image" class="oe_avatar"/>
+                            <field name="name" placeholder="eg.: USHUHUDA"/>
+                            <field name="sexe"/>
+                            <field name="birth_day"/>
+                            <field name="phone_number" placeholder="eg.: +243 99 999 999"/>
+                        </group>
+                        <group string="Adresse">
+                            <field name="province"/>
+                            <field name="ville"/>
+                            <field name="commune"/>
+                            <field name="quartier"/>
+                            <field name="avenue" />                             
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>    
+    </record>
+
     <record id="membre_cs_view_search" model="ir.ui.view">
         <field name="name">membre.cs.search</field>
         <field name="model">membre.cs</field>
@@ -22,6 +51,11 @@
             <search string="Membre Search">
                 <field name="name"/>
                 <field name="phone_number"/>
+                <field name="sexe"/>
+                <field name="birth_day"/>
+                <field name="email"/>
+                <field name="quartier"/>
+                <field name="avenue"/>
             </search>
         </field>
     </record>    

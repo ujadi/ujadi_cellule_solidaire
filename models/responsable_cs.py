@@ -7,10 +7,10 @@ class ResponsableCs(models.Model):
     name = fields.Char(string="Nom du responsable", required=True)
     phone = fields.Char(string="Téléphone", required=True)
     sexe = fields.Selection([
-    ('male', 'Male'),
-    ('female', 'Female'),
+    ('male', 'M'),
+    ('female', 'F'),
     ('other', 'Other'),],
-    string='Gender')
+    string='Genre')
    
     email = fields.Char(string="Email")
     quartier = fields.Char(string="Quartier")  
