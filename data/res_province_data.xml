@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="province_nord_kivu" model="res.province">
+            <field name="name">Nord-Kivu</field>
+        </record>
+        <record id="province_sud_kivu" model="res.province">
+            <field name="name">Sud-Kivu</field>
+        </record>
+        <record id="province_maniema" model="res.province">
+            <field name="name">Maniema</field>
+        </record>
+        <record id="province_kinshasa" model="res.province">
+            <field name="name">Kinshasa</field>
+        </record>
+        <record id="province_haut_katanga" model="res.province">
+            <field name="name">Haut-Katanga</field>
+        </record>
+        <record id="province_lualaba" model="res.province">
+            <field name="name">Lualaba</field>
+        </record>
+        <record id="province_tshopo" model="res.province">
+            <field name="name">Tshopo</field>
+        </record>
+        <record id="province_haut_lomami" model="res.province">
+            <field name="name">Haut-Lomami</field>
+        </record>
+        <record id="province_kasai" model="res.province">
+            <field name="name">Kasaï</field>
+        </record>
+        <record id="province_kasai_central" model="res.province">
+            <field name="name">Kasaï Central</field>
+        </record>
+        <record id="province_kasai_oriental" model="res.province">
+            <field name="name">Kasaï Oriental</field>
+        </record>
+        <record id="province_kwango" model="res.province">
+            <field name="name">Kwango</field>
+        </record>
+        <record id="province_kwilu" model="res.province">
+            <field name="name">Kwilu</field>
+        </record>
+        <record id="province_mai_ndombe" model="res.province">
+            <field name="name">Maï-Ndombe</field>
+        </record>
+        <record id="province_mongala" model="res.province">
+            <field name="name">Mongala</field>
+        </record>
+        <record id="province_nord_ubangi" model="res.province">
+            <field name="name">Nord-Ubangi</field>
+        </record>
+        <record id="province_sud_ubangi" model="res.province">
+            <field name="name">Sud-Ubangi</field>
+        </record>
+        <record id="province_tshuapa" model="res.province">
+            <field name="name">Tshuapa</field>
+        </record>
+        <record id="province_sankuru" model="res.province">
+            <field name="name">Sankuru</field>
+        </record>
+        <record id="province_ituri" model="res.province">
+            <field name="name">Ituri</field>
+        </record>
+    </data>
+</odoo>

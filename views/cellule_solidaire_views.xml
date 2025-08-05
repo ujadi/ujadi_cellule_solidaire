@@ -6,6 +6,7 @@
             <list string="Channel" editable="bottom">
                 <field name="name"/>
                 <field name="entity"/>
+                <field name="province_id"/>
                 <field name="responsable_id" widget="badge"/>
                 <field name="state" widget="badge" statusbar_visible="draft,confirmed"/>
                 <field name="membre_ids" widget="many2many_tags"/>
@@ -23,24 +24,30 @@
                 </header>
                 <sheet>
                     <group>
-                        <field name="name" placeholder="eg.: USHUHUDA"/>
-                        <field name="entity" placeholder="eg.: GOMA VILLE"/>                  
-                    </group>
-                    <notebook>
-                        <page string="Identification Du Responsable">
+                        <group>
+                            <field name="name" placeholder="eg.: LA VIE DE DIEU"/>
+                            <field name="entity" placeholder="eg.: GOMA VILLE"/>     
+                        </group>
+                        <group>
+                            <field name="province_id" placeholder="eg.: Nord-Kivu"/>
+                            <field name="membre_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                        </group>    
+                        <group>
                                 <field name="responsable_id" mode="list">
                                     <list editable="bottom">
                                         <field name="name"/>
                                         <field name="phone"/>
                                         <field name="sexe"/>
+                                        <field name="province_id"/>
                                         <field name="email" invisible="1"/>
                                         <field name="quartier" invisible="1"/>
                                         <field name="avenue" invisible="1"/>
                                         <field name="photo" widget="image" class="oe_avatar"/>
                                     </list>                                
                                 </field>                     
-
-                        </page>
+                        </group>             
+                    </group>
+                    <notebook>
                         <page string="Les Membres De La Cellule Solidaire">
                             <field name="membre_ids"/>
                         </page>

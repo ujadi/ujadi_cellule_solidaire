@@ -8,10 +8,11 @@ class ResponsableCs(models.Model):
     phone = fields.Char(string="Téléphone", required=True)
     sexe = fields.Selection([
     ('male', 'M'),
-    ('female', 'F'),
-    ('other', 'Other'),],
-    string='Genre')
-   
+    ('female', 'female'),
+    ],
+    string='Sexe')
+    
+    province_id = fields.Many2one('res.province', string="Province", required=True)
     email = fields.Char(string="Email")
     quartier = fields.Char(string="Quartier")  
     avenue = fields.Char(string="Avenue")  

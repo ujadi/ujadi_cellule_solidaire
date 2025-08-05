@@ -20,7 +20,8 @@
        'views/cellule_solidaire_menus.xml',
        'data/cellule_solidaire_data.xml',
        'data/responsable_cs_data.xml',
-       'data/membre_cs_data.xml'
+       'data/membre_cs_data.xml',
+        'data/res_province_data.xml',
     ],
     'installable': True,
     'application': True,

@@ -7,7 +7,7 @@
                 <field name="name"/>
                 <field name="phone_number"/>
                 <field name="sexe"/>
-                <field name="province"/>
+                <field name="province_id"/>
                 <field name="ville"/>
                 <field name="commune"/>
                 <field name="quartier"/>
@@ -32,7 +32,7 @@
                             <field name="phone_number" placeholder="eg.: +243 99 999 999"/>
                         </group>
                         <group string="Adresse">
-                            <field name="province"/>
+                            <field name="province_id"/>
                             <field name="ville"/>
                             <field name="commune"/>
                             <field name="quartier"/>

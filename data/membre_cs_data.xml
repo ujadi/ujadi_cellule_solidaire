@@ -1,127 +1,127 @@
 <odoo>
     <record id="membre_01" model="membre.cs">
         <field name="name">Aline Kambere</field>
-        <field name="phone_number">+243970000001</field>
+        <field name="phone_number">970000001</field>
         <field name="sexe">male</field>
     </record>
     <record id="membre_02" model="membre.cs">
         <field name="name">David Musafiri</field>
-        <field name="phone_number">+243970000002</field>
+        <field name="phone_number">0970000002</field>
         <field name="sexe">male</field>
     </record>
     <record id="membre_03" model="membre.cs">
         <field name="name">Bénédicte Safari</field>
-        <field name="phone_number">+243970000003</field>
+        <field name="phone_number">0970000003</field>
         <field name="sexe">female</field>
     </record>
     <record id="membre_04" model="membre.cs">
         <field name="name">Christian Bahati</field>
-        <field name="phone_number">+243970000004</field>
+        <field name="phone_number">0970000004</field>
         <field name="sexe">male</field>
     </record>
     <record id="membre_05" model="membre.cs">
         <field name="name">Déborah Iragi</field>
-        <field name="phone_number">+243970000005</field>
+        <field name="phone_number">0970000005</field>
         <field name="sexe">female</field>
     </record>
     <record id="membre_06" model="membre.cs">
         <field name="name">Eric Kavira</field>
-        <field name="phone_number">+243970000006</field>
+        <field name="phone_number">0970000006</field>
         <field name="sexe">male</field>
     </record>
     <record id="membre_07" model="membre.cs">
         <field name="name">Florence Uwamahoro</field>
-        <field name="phone_number">+243970000007</field>
+        <field name="phone_number">0970000007</field>
         <field name="sexe">female</field>
     </record>
     <record id="membre_08" model="membre.cs">
         <field name="name">Grégoire Bashizi</field>
-        <field name="phone_number">+243970000008</field>
+        <field name="phone_number">0970000008</field>
         <field name="sexe">male</field>
     </record>
     <record id="membre_09" model="membre.cs">
         <field name="name">Huguette Mbusa</field>
-        <field name="phone_number">+243970000009</field>
+        <field name="phone_number">0970000009</field>
         <field name="sexe">female</field>
     </record>
     <record id="membre_10" model="membre.cs">
         <field name="name">Isaac Luboya</field>
-        <field name="phone_number">+243970000010</field>
+        <field name="phone_number">0970000010</field>
         <field name="sexe">male</field>
     </record>
     <record id="membre_11" model="membre.cs">
         <field name="name">Jeannette Mulunda</field>
-        <field name="phone_number">+243970000011</field>
+        <field name="phone_number">0970000011</field>
         <field name="sexe">female</field>
     </record>
     <record id="membre_12" model="membre.cs">
         <field name="name">Kevin Kalume</field>
-        <field name="phone_number">+243970000012</field>
+        <field name="phone_number">0970000012</field>
         <field name="sexe">male</field>
     </record>
     <record id="membre_13" model="membre.cs">
         <field name="name">Léonie Kasereka</field>
-        <field name="phone_number">+243970000013</field>
+        <field name="phone_number">0970000013</field>
         <field name="sexe">female</field>
     </record>
     <record id="membre_14" model="membre.cs">
         <field name="name">Michel Mukwege</field>
-        <field name="phone_number">+243970000014</field>
+        <field name="phone_number">0970000014</field>
         <field name="sexe">male</field>
     </record>
     <record id="membre_15" model="membre.cs">
         <field name="name">Nadine Uwimana</field>
-        <field name="phone_number">+243970000015</field>
+        <field name="phone_number">0970000015</field>
         <field name="sexe">female</field>
     </record>
     <record id="membre_16" model="membre.cs">
         <field name="name">Olivier Bashonga</field>
-        <field name="phone_number">+243970000016</field>
+        <field name="phone_number">0970000016</field>
         <field name="sexe">male</field>
     </record>
     <record id="membre_17" model="membre.cs">
         <field name="name">Patricia Bisimwa</field>
-        <field name="phone_number">+243970000017</field>
+        <field name="phone_number">0970000017</field>
         <field name="sexe">female</field>
     </record>
     <record id="membre_18" model="membre.cs">
         <field name="name">Quentin Mulokozi</field>
-        <field name="phone_number">+243970000018</field>
+        <field name="phone_number">0970000018</field>
         <field name="sexe">male</field>
     </record>
     <record id="membre_19" model="membre.cs">
         <field name="name">Rachel Mbabazi</field>
-        <field name="phone_number">+243970000019</field>
+        <field name="phone_number">0970000019</field>
         <field name="sexe">female</field>
     </record>
     <record id="membre_20" model="membre.cs">
         <field name="name">Steve Bahunga</field>
-        <field name="phone_number">+243970000020</field>
+        <field name="phone_number">0970000020</field>
         <field name="sexe">male</field>
     </record>
     <record id="membre_21" model="membre.cs">
         <field name="name">Tania Mukuna</field>
-        <field name="phone_number">+243970000021</field>
+        <field name="phone_number">0970000021</field>
         <field name="sexe">female</field>
     </record>
     <record id="membre_22" model="membre.cs">
         <field name="name">Ulrich Kambale</field>
-        <field name="phone_number">+243970000022</field>
+        <field name="phone_number">0970000022</field>
         <field name="sexe">male</field>
     </record>
     <record id="membre_23" model="membre.cs">
         <field name="name">Vanessa Byamungu</field>
-        <field name="phone_number">+243970000023</field>
+        <field name="phone_number">0970000023</field>
         <field name="sexe">female</field>
     </record>
     <record id="membre_24" model="membre.cs">
         <field name="name">Willy Safari</field>
-        <field name="phone_number">+243970000024</field>
+        <field name="phone_number">0970000024</field>
         <field name="sexe">male</field>
     </record>
     <record id="membre_25" model="membre.cs">
         <field name="name">Yvette Nyirabintu</field>
-        <field name="phone_number">+243970000025</field>
+        <field name="phone_number">0970000025</field>
         <field name="sexe">female</field>
     </record>
 </odoo>
