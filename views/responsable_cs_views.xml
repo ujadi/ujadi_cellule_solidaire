@@ -23,10 +23,12 @@
                     <group>
                             <field name="name" placeholder="eg.: USHUHUDA"/>
                             <field name="phone" placeholder="eg.: +243 99 999 999"/>
-                            <field name="sexe"/>
-                            <field name="email" invisible="1"/>
-                            <field name="quartier" invisible="1"/>
-                            <field name="avenue" invisible="1"/>
+                            <field name="sexe" placeholder="F"/>
+                    </group>
+                    <group> 
+                            <field name="email" options="1"/>
+                            <field name="quartier" options="1"/>
+                            <field name="avenue" options="1"/>
                     </group>
                 </sheet>
             </form>

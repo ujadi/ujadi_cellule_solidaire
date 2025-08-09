@@ -9,7 +9,11 @@ class CelluleSolidaire(models.Model):
 
 
     name = fields.Char(string='Dénomination de la CS', required=True)
-    province_id = fields.Many2one('res.province', string="Province", required=True)
+    province_id = fields.Many2one('res.province', string="Province")
+    ville = fields.Many2one(
+        'res.ville.territoire',
+        domain="[('province_id', '=', province_id)]",
+        string="Ville/Territoire")
     entity = fields.Char(string='Entité')
     responsable_id = fields.Many2one('responsable.cs', string="Responsable")
     membre_ids = fields.One2many('membre.cs', 'cellule_id', string="Membres")
@@ -19,7 +23,7 @@ class CelluleSolidaire(models.Model):
         ('draft', 'Draft'),
         ('confirmed', 'Confirmed')
     ])
-    # membre_count = fields.Integer(string="Nombre de membres", compute='_compute_membre_count')
+    
 
 
     @api.constrains('membre_ids')  # ✅ 'constrains' avec un S, sans T

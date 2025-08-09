@@ -1,5 +1,7 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
+from datetime import date
+
 
 
 class MembreCs(models.Model):
@@ -8,54 +10,64 @@ class MembreCs(models.Model):
 
     name = fields.Char(string='Noms complets', required=True)
     phone_number = fields.Char(string='N° Téléphone', required=True)
+    province_id = fields.Many2one('res.province', string="Province") 
+    province_selected = fields.Boolean(string="Province choisie", compute='_compute_province_selected')
     sexe = fields.Selection([
     ('male', 'M'),
     ('female', 'F'),
     ],
-    string='Sexe')
+    string='Sexe'
+    )
     birth_day = fields.Date(string='Date de Naissance')
-    province_id = fields.Many2one('res.province', string="Province", required=True)  
-    ville = fields.Char(string="Ville/Territoire")
+
+    age = fields.Integer(string="Âge", compute='_compute_age', store=True)
+    ville = fields.Many2one(
+        'res.ville.territoire',
+        domain="[('province_id', '=', province_id)]",
+        string="Ville/Territoire"
+    )
     commune = fields.Char(string="Commune/Chefferie")
     quartier = fields.Char(string="Quartier/Groupement")
     avenue = fields.Char(string="Avenue/Village") 
     email = fields.Char(string='Email')
     cellule_id = fields.Many2one('cellule.solidaire', string="Cellule Solidaire", ondelete='restrict')
-    photo = fields.Image(string="Photo")
+    photo = fields.Image(string="Photo passeport")
+    photo_identity = fields.Image(string="Photo d'identité")
+    user_id = fields.Many2one(
+        'res.users', 
+        string="Utilisateur lié",
+        default=lambda self: self.env.user,
+    )
+    active = fields.Boolean(string='Actif', default=True)
+
+    _sql_constraints = [
+        ('phone_number_unique', 'unique(phone_number)', 'Le numéro de téléphone doit être unique.'),
+        ('email_unique', 'unique(email)', 'L\'adresse email doit être unique.')
+    ]
 
 
-
-    @api.constrains('phone_number')
-    def _check_phone_number(self):
-        for rec in self:
-            if len(rec.phone_number) < 9 or len(rec.phone_number) > 12:
-                raise ValidationError("Le numéro de téléphone doit comporter entre 9 et 15 chiffres.")
-            
     @api.constrains('email')
     def _check_email_format(self):
         for rec in self:
             if rec.email and '@' not in rec.email:
                 raise ValidationError("L'adresse email doit contenir un '@'.")
+            
+                
 
-    @api.constrains('name')
-    def _check_name_length(self):
+    @api.depends('birth_day')
+    def _compute_age(self):
+        for record in self:
+            if record.birth_day:
+                today = date.today()
+                born = record.birth_day
+                age = today.year - born.year - ((today.month, today.day) < (born.month, born.day))
+                record.age = age
+            else:
+                record.age = 0
+    @api.depends('province_id')
+    def _compute_province_selected(self):
         for rec in self:
-            if len(rec.name) < 3:
-                raise ValidationError("Le nom complet doit comporter au moins 3 caractères.")
-            
-    @api.constrains('birth_day')
-    def _check_birth_day(self):
-        for rec in self:
-            if rec.birth_day and rec.birth_day > fields.Date.today():
-                raise ValidationError("La date de naissance ne peut pas être dans le futur.")
-            
-    @api.constrains('cellule_id')
-    def _check_cellule_membership(self):
-        for membre in self:
-            if membre.cellule_id:
-                existing = self.search([
-                    ('id', '!=', membre.id),
-                    ('cellule_id', '=', membre.cellule_id.id)
-                    ])
-                if existing:
-                    raise ValidationError("Ce membre est déjà assigné à une cellule.")
+            rec.province_selected = bool(rec.province_id)
+   
+
+

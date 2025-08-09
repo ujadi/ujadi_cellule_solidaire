@@ -13,6 +13,7 @@
         'web'
     ],
     'data': [
+       'security/res_groups.xml',
        'security/ir.model.access.csv',
        'views/cellule_solidaire_views.xml',
        'views/membre_cs_views.xml',
@@ -21,7 +22,8 @@
        'data/cellule_solidaire_data.xml',
        'data/responsable_cs_data.xml',
        'data/membre_cs_data.xml',
-        'data/res_province_data.xml',
+       'data/res_province_data.xml',
+       'data/res_ville_territoire_data.xml',
     ],
     'installable': True,
     'application': True,

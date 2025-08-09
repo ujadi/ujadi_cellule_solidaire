@@ -7,6 +7,7 @@
                 <field name="name"/>
                 <field name="entity"/>
                 <field name="province_id"/>
+                <field name="ville"></field>
                 <field name="responsable_id" widget="badge"/>
                 <field name="state" widget="badge" statusbar_visible="draft,confirmed"/>
                 <field name="membre_ids" widget="many2many_tags"/>
@@ -23,7 +24,7 @@
                      <field name="state" widget="statusbar" statusbar_visible="draft,confirmed" options="{'clickable': '1'}"/>
                 </header>
                 <sheet>
-                    <group>
+                    <!-- <group> -->
                         <group>
                             <field name="name" placeholder="eg.: LA VIE DE DIEU"/>
                             <field name="entity" placeholder="eg.: GOMA VILLE"/>     
@@ -46,7 +47,7 @@
                                     </list>                                
                                 </field>                     
                         </group>             
-                    </group>
+                    <!-- </group> -->
                     <notebook>
                         <page string="Les Membres De La Cellule Solidaire">
                             <field name="membre_ids"/>

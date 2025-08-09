@@ -1,0 +1,27 @@
+<odoo>
+    <record id="view_delete_membre_wizard_form" model="ir.ui.view">
+        <field name="name">delete.membre.cs.wizard.form</field>
+        <field name="model">delete.membre.cs.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Supprimer un membre ?">
+                <group>
+                    <field name="membre_id" readonly="1"/>
+                    <div class="o_form_label">
+                        Êtes-vous sûr(e) de vouloir supprimer ce membre de la cellule solidaire ?
+                    </div>
+                </group>
+                <footer>
+                    <button name="confirm_delete" string="Confirmer" type="object" class="btn-primary"/>
+                    <button string="Annuler" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_delete_membre_wizard" model="ir.actions.act_window">
+        <field name="name">Supprimer un membre</field>
+        <field name="res_model">delete.membre.cs.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

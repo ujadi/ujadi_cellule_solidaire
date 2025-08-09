@@ -1,0 +1,442 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Villes du Nord-Kivu -->
+        <record id="ville_goma" model="res.ville.territoire">
+            <field name="name">Goma</field>
+            <field name="province_id" ref="province_nord_kivu"/>
+        </record>
+        <record id="ville_butembo" model="res.ville.territoire">
+            <field name="name">Butembo</field>
+            <field name="province_id" ref="province_nord_kivu"/>
+        </record>
+        <record id="ville_beni" model="res.ville.territoire">
+            <field name="name">Beni (Ville)</field>
+            <field name="province_id" ref="province_nord_kivu"/>
+        </record>
+
+        <!-- Territoires du Nord-Kivu -->
+        <record id="territoire_beni" model="res.ville.territoire">
+            <field name="name">Beni (Territoire)</field>
+            <field name="province_id" ref="province_nord_kivu"/>
+        </record>
+        <record id="territoire_lubero" model="res.ville.territoire">
+            <field name="name">Lubero</field>
+            <field name="province_id" ref="province_nord_kivu"/>
+        </record>
+        <record id="territoire_masisi" model="res.ville.territoire">
+            <field name="name">Masisi</field>
+            <field name="province_id" ref="province_nord_kivu"/>
+        </record>
+        <record id="territoire_nyiragongo" model="res.ville.territoire">
+            <field name="name">Nyiragongo</field>
+            <field name="province_id" ref="province_nord_kivu"/>
+        </record>
+        <record id="territoire_rutshuru" model="res.ville.territoire">
+            <field name="name">Rutshuru</field>
+            <field name="province_id" ref="province_nord_kivu"/>
+        </record>
+        <record id="territoire_walikale" model="res.ville.territoire">
+            <field name="name">Walikale</field>
+            <field name="province_id" ref="province_nord_kivu"/>
+        </record>
+
+         <record id="ville_bukavu" model="res.ville.territoire">
+            <field name="name">Bukavu</field>
+            <field name="province_id" ref="province_sud_kivu"/>
+        </record>
+
+        <!-- Territoires du Sud-Kivu -->
+        <record id="territoire_fizi" model="res.ville.territoire">
+            <field name="name">Fizi</field>
+            <field name="province_id" ref="province_sud_kivu"/>
+        </record>
+        <record id="territoire_idjwi" model="res.ville.territoire">
+            <field name="name">Idjwi</field>
+            <field name="province_id" ref="province_sud_kivu"/>
+        </record>
+        <record id="territoire_kabare" model="res.ville.territoire">
+            <field name="name">Kabare</field>
+            <field name="province_id" ref="province_sud_kivu"/>
+        </record>
+        <record id="territoire_kalehe" model="res.ville.territoire">
+            <field name="name">Kalehe</field>
+            <field name="province_id" ref="province_sud_kivu"/>
+        </record>
+        <record id="territoire_mwenga" model="res.ville.territoire">
+            <field name="name">Mwenga</field>
+            <field name="province_id" ref="province_sud_kivu"/>
+        </record>
+        <record id="territoire_shabunda" model="res.ville.territoire">
+            <field name="name">Shabunda</field>
+            <field name="province_id" ref="province_sud_kivu"/>
+        </record>
+        <record id="territoire_uvira" model="res.ville.territoire">
+            <field name="name">Uvira</field>
+            <field name="province_id" ref="province_sud_kivu"/>
+        </record>
+        <record id="territoire_walungu" model="res.ville.territoire">
+            <field name="name">Walungu</field>
+            <field name="province_id" ref="province_sud_kivu"/>
+        </record>
+
+        <!-- Ville du Maniema -->
+        <record id="ville_kindu" model="res.ville.territoire">
+            <field name="name">Kindu</field>
+            <field name="province_id" ref="province_maniema"/>
+        </record>
+
+        <!-- Territoires du Maniema -->
+        <record id="territoire_kailo" model="res.ville.territoire">
+            <field name="name">Kailo</field>
+            <field name="province_id" ref="province_maniema"/>
+        </record>
+        <record id="territoire_kasongo" model="res.ville.territoire">
+            <field name="name">Kasongo</field>
+            <field name="province_id" ref="province_maniema"/>
+        </record>
+        <record id="territoire_kibombo" model="res.ville.territoire">
+            <field name="name">Kibombo</field>
+            <field name="province_id" ref="province_maniema"/>
+        </record>
+        <record id="territoire_lubutu" model="res.ville.territoire">
+            <field name="name">Lubutu</field>
+            <field name="province_id" ref="province_maniema"/>
+        </record>
+        <record id="territoire_pangi" model="res.ville.territoire">
+            <field name="name">Pangi</field>
+            <field name="province_id" ref="province_maniema"/>
+        </record>
+        <record id="territoire_punia" model="res.ville.territoire">
+            <field name="name">Punia</field>
+            <field name="province_id" ref="province_maniema"/>
+        </record>
+
+         <!-- Ville de Kinshasa -->
+        <record id="ville_kinshasa" model="res.ville.territoire">
+            <field name="name">Kinshasa</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+
+        <!-- Communes de Kinshasa -->
+        <!-- District Funa -->
+        <record id="commune_bumbu" model="res.ville.territoire">
+            <field name="name">Bumbu</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_kalamu" model="res.ville.territoire">
+            <field name="name">Kalamu</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_kasa_vubu" model="res.ville.territoire">
+            <field name="name">Kasa-Vubu</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_makala" model="res.ville.territoire">
+            <field name="name">Makala</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_ngiri_ngiri" model="res.ville.territoire">
+            <field name="name">Ngiri-Ngiri</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_selembao" model="res.ville.territoire">
+            <field name="name">Selembao</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+
+        <!-- District Lukunga -->
+        <record id="commune_barumbu" model="res.ville.territoire">
+            <field name="name">Barumbu</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_gombe" model="res.ville.territoire">
+            <field name="name">Gombe</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_kinshasa" model="res.ville.territoire">
+            <field name="name">Kinshasa (commune)</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_kintambo" model="res.ville.territoire">
+            <field name="name">Kintambo</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_lingwala" model="res.ville.territoire">
+            <field name="name">Lingwala</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_mont_ngafula" model="res.ville.territoire">
+            <field name="name">Mont-Ngafula</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_ngaliema" model="res.ville.territoire">
+            <field name="name">Ngaliema</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+
+        <!-- District Mont Amba -->
+        <record id="commune_kisenso" model="res.ville.territoire">
+            <field name="name">Kisenso</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_lemba" model="res.ville.territoire">
+            <field name="name">Lemba</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_limete" model="res.ville.territoire">
+            <field name="name">Limete</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_matete" model="res.ville.territoire">
+            <field name="name">Matete</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_ngaba" model="res.ville.territoire">
+            <field name="name">Ngaba</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+
+        <!-- District Tshangu -->
+        <record id="commune_kimbanseke" model="res.ville.territoire">
+            <field name="name">Kimbanseke</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_maluku" model="res.ville.territoire">
+            <field name="name">Maluku</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_masina" model="res.ville.territoire">
+            <field name="name">Masina</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_ndjili" model="res.ville.territoire">
+            <field name="name">N'Djili</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <record id="commune_nsele" model="res.ville.territoire">
+            <field name="name">Nsele</field>
+            <field name="province_id" ref="province_kinshasa"/>
+        </record>
+        <!-- Villes -->
+        <record id="ville_lubumbashi" model="res.ville.territoire">
+            <field name="name">Lubumbashi</field>
+            <field name="province_id" ref="province_haut_katanga"/>
+        </record>
+        <record id="ville_likasi" model="res.ville.territoire">
+            <field name="name">Likasi</field>
+            <field name="province_id" ref="province_haut_katanga"/>
+        </record>
+        <record id="ville_kasumbalesa" model="res.ville.territoire">
+            <field name="name">Kasumbalesa</field>
+            <field name="province_id" ref="province_haut_katanga"/>
+        </record>
+        <record id="ville_kipushi" model="res.ville.territoire">
+            <field name="name">Kipushi (ville)</field>
+            <field name="province_id" ref="province_haut_katanga"/>
+        </record>
+
+        <!-- Territoires -->
+        <record id="territoire_kipushi" model="res.ville.territoire">
+            <field name="name">Kipushi (territoire)</field>
+            <field name="province_id" ref="province_haut_katanga"/>
+        </record>
+        <record id="territoire_kasenga" model="res.ville.territoire">
+            <field name="name">Kasenga</field>
+            <field name="province_id" ref="province_haut_katanga"/>
+        </record>
+        <record id="territoire_mitwaba" model="res.ville.territoire">
+            <field name="name">Mitwaba</field>
+            <field name="province_id" ref="province_haut_katanga"/>
+        </record>
+        <record id="territoire_pweto" model="res.ville.territoire">
+            <field name="name">Pweto</field>
+            <field name="province_id" ref="province_haut_katanga"/>
+        </record>
+        <record id="territoire_sakania" model="res.ville.territoire">
+            <field name="name">Sakania</field>
+            <field name="province_id" ref="province_haut_katanga"/>
+        </record>
+        <record id="territoire_kambove" model="res.ville.territoire">
+            <field name="name">Kambove</field>
+            <field name="province_id" ref="province_haut_katanga"/>
+        </record>
+        <record id="territoire_mokambo" model="res.ville.territoire">
+            <field name="name">Mokambo</field>
+            <field name="province_id" ref="province_haut_katanga"/>
+        </record>
+         <!-- Ville -->
+        <record id="ville_kolwezi" model="res.ville.territoire">
+            <field name="name">Kolwezi</field>
+            <field name="province_id" ref="province_lualaba"/>
+        </record>
+
+        <!-- Territoires -->
+        <record id="territoire_dilolo" model="res.ville.territoire">
+            <field name="name">Dilolo</field>
+            <field name="province_id" ref="province_lualaba"/>
+        </record>
+        <record id="territoire_lubudi" model="res.ville.territoire">
+            <field name="name">Lubudi</field>
+            <field name="province_id" ref="province_lualaba"/>
+        </record>
+        <record id="territoire_kapanga" model="res.ville.territoire">
+            <field name="name">Kapanga</field>
+            <field name="province_id" ref="province_lualaba"/>
+        </record>
+        <record id="territoire_mutshatsha" model="res.ville.territoire">
+            <field name="name">Mutshatsha</field>
+            <field name="province_id" ref="province_lualaba"/>
+        </record>
+         <!-- Ville -->
+        <record id="ville_kisangani" model="res.ville.territoire">
+            <field name="name">Kisangani</field>
+            <field name="province_id" ref="province_tshopo"/>
+        </record>
+
+        <!-- Territoires -->
+        <record id="territoire_bafwasende" model="res.ville.territoire">
+            <field name="name">Bafwasende</field>
+            <field name="province_id" ref="province_tshopo"/>
+        </record>
+        <record id="territoire_banalia" model="res.ville.territoire">
+            <field name="name">Banalia</field>
+            <field name="province_id" ref="province_tshopo"/>
+        </record>
+        <record id="territoire_basoko" model="res.ville.territoire">
+            <field name="name">Basoko</field>
+            <field name="province_id" ref="province_tshopo"/>
+        </record>
+        <record id="territoire_isangi" model="res.ville.territoire">
+            <field name="name">Isangi</field>
+            <field name="province_id" ref="province_tshopo"/>
+        </record>
+        <record id="territoire_opala" model="res.ville.territoire">
+            <field name="name">Opala</field>
+            <field name="province_id" ref="province_tshopo"/>
+        </record>
+        <record id="territoire_ubundu" model="res.ville.territoire">
+            <field name="name">Ubundu</field>
+            <field name="province_id" ref="province_tshopo"/>
+        </record>
+        <record id="territoire_yahuma" model="res.ville.territoire">
+            <field name="name">Yahuma</field>
+            <field name="province_id" ref="province_tshopo"/>
+        </record>
+        <!-- Ville -->
+        <record id="ville_kamina" model="res.ville.territoire">
+            <field name="name">Kamina</field>
+            <field name="province_id" ref="province_haut_lomami"/>
+        </record>
+
+        <!-- Territoires -->
+        <record id="territoire_bukama" model="res.ville.territoire">
+            <field name="name">Bukama</field>
+            <field name="province_id" ref="province_haut_lomami"/>
+        </record>
+        <record id="territoire_kabongo" model="res.ville.territoire">
+            <field name="name">Kabongo</field>
+            <field name="province_id" ref="province_haut_lomami"/>
+        </record>
+        <record id="territoire_kaniama" model="res.ville.territoire">
+            <field name="name">Kaniama</field>
+            <field name="province_id" ref="province_haut_lomami"/>
+        </record>
+        <record id="territoire_malemba_nkulu" model="res.ville.territoire">
+            <field name="name">Malemba-Nkulu</field>
+            <field name="province_id" ref="province_haut_lomami"/>
+        </record>
+        <!-- Ville -->
+        <record id="ville_tshikapa" model="res.ville.territoire">
+            <field name="name">Tshikapa</field>
+            <field name="province_id" ref="province_kasai"/>
+        </record>
+
+        <!-- Territoires -->
+        <record id="territoire_dekese" model="res.ville.territoire">
+            <field name="name">Dekese</field>
+            <field name="province_id" ref="province_kasai"/>
+        </record>
+        <record id="territoire_ilebo" model="res.ville.territoire">
+            <field name="name">Ilebo</field>
+            <field name="province_id" ref="province_kasai"/>
+        </record>
+        <record id="territoire_kamonia" model="res.ville.territoire">
+            <field name="name">Kamonia</field>
+            <field name="province_id" ref="province_kasai"/>
+        </record>
+        <record id="territoire_luebo" model="res.ville.territoire">
+            <field name="name">Luebo</field>
+            <field name="province_id" ref="province_kasai"/>
+        </record>
+        <record id="territoire_mweka" model="res.ville.territoire">
+            <field name="name">Mweka</field>
+            <field name="province_id" ref="province_kasai"/>
+        </record>
+         <!-- Ville -->
+        <record id="ville_kananga" model="res.ville.territoire">
+            <field name="name">Kananga</field>
+            <field name="province_id" ref="province_kasai_central"/>
+        </record>
+
+        <!-- Territoires -->
+        <record id="territoire_demba" model="res.ville.territoire">
+            <field name="name">Demba</field>
+            <field name="province_id" ref="province_kasai_central"/>
+        </record>
+        <record id="territoire_dibaya" model="res.ville.territoire">
+            <field name="name">Dibaya</field>
+            <field name="province_id" ref="province_kasai_central"/>
+        </record>
+        <record id="territoire_dimbelenge" model="res.ville.territoire">
+            <field name="name">Dimbelenge</field>
+            <field name="province_id" ref="province_kasai_central"/>
+        </record>
+        <record id="territoire_kazumba" model="res.ville.territoire">
+            <field name="name">Kazumba</field>
+            <field name="province_id" ref="province_kasai_central"/>
+        </record>
+        <record id="territoire_luiza" model="res.ville.territoire">
+            <field name="name">Luiza</field>
+            <field name="province_id" ref="province_kasai_central"/>
+        </record>
+        <record id="territoire_luamba" model="res.ville.territoire">
+            <field name="name">Luamba</field>
+            <field name="province_id" ref="province_kasai_central"/>
+        </record>
+        <record id="territoire_mweka_kc" model="res.ville.territoire">
+            <field name="name">Mweka</field>
+            <field name="province_id" ref="province_kasai_central"/>
+        </record>
+         <!-- Ville -->
+        <record id="ville_mbuji_mayi" model="res.ville.territoire">
+            <field name="name">Mbuji-Mayi</field>
+            <field name="province_id" ref="province_kasai_oriental"/>
+        </record>
+
+        <!-- Territoires -->
+        <record id="territoire_kabeya_kamwanga" model="res.ville.territoire">
+            <field name="name">Kabeya-Kamwanga</field>
+            <field name="province_id" ref="province_kasai_oriental"/>
+        </record>
+        <record id="territoire_katanda" model="res.ville.territoire">
+            <field name="name">Katanda</field>
+            <field name="province_id" ref="province_kasai_oriental"/>
+        </record>a
+        <record id="territoire_lupatapata" model="res.ville.territoire">
+            <field name="name">Lupatapata</field>
+            <field name="province_id" ref="province_kasai_oriental"/>
+        </record>
+        <record id="territoire_miabi" model="res.ville.territoire">
+            <field name="name">Miabi</field>
+            <field name="province_id" ref="province_kasai_oriental"/>
+        </record>
+        <record id="territoire_tshilenge" model="res.ville.territoire">
+            <field name="name">Tshilenge</field>
+            <field name="province_id" ref="province_kasai_oriental"/>
+        </record>
+        <record id="territoire_kabondo" model="res.ville.territoire">
+            <field name="name">Kabondo</field>
+            <field name="province_id" ref="province_kasai_oriental"/>
+        </record>
+    </data>
+</odoo>

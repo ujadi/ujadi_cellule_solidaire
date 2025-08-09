@@ -8,14 +8,30 @@ class ResponsableCs(models.Model):
     phone = fields.Char(string="Téléphone", required=True)
     sexe = fields.Selection([
     ('male', 'M'),
-    ('female', 'female'),
+    ('female', 'F'),
     ],
     string='Sexe')
     
-    province_id = fields.Many2one('res.province', string="Province", required=True)
+    province_id = fields.Many2one('res.province', string="Province")
+    user_id = fields.Many2one('res.users', string='Utilisateur lié')
     email = fields.Char(string="Email")
     quartier = fields.Char(string="Quartier")  
     avenue = fields.Char(string="Avenue")  
-    photo = fields.Image(string="Photo")  
+    photo = fields.Image(string="Photo Passeport")  
+    photo_identity = fields.Image(string="Photo d'identité")
+    # Add a one-to-many relationship to CelluleSolidaire
+    # This assumes that the 'cellule.solidaire' model has a field 'responsable_id'
+    # that links back to this model.
+    # If the field name in 'cellule.solidaire' is different, adjust accordingly.
+    # Note: The field 'cellule_ids' is used to link multiple cellules to a responsable.
+    # If a responsable can only be linked to one cellule, use Many2one instead.
+    # If you want to restrict deletion of a responsable if they are linked to cellules,
+    # you can set ondelete='restrict' in the Many2one field in 'cellule.solidaire'.
+    # If you want to allow deletion, you can set ondelete='set null' or ondelete='cascade'.
+    # Here, we assume that a responsable can be linked to multiple cellules.
+    # If you want to restrict deletion of a responsable if they are linked to cellules,
+    # you can set ondelete='restrict' in the Many2one field in 'cellule.solidaire'.
+    # If you want to allow deletion, you can set ondelete='set null' or ondelete='cascade'.
+    # Here, we assume that a responsable can be linked to multiple cellules.        
     cellule_ids = fields.One2many('cellule.solidaire', 'responsable_id', string="Cellules")  # Corrected to match the new model name
     active = fields.Boolean(string='Actif', default=True)  
