@@ -24,6 +24,7 @@
                             <field name="name" placeholder="eg.: USHUHUDA"/>
                             <field name="phone" placeholder="eg.: +243 99 999 999"/>
                             <field name="sexe" placeholder="F"/>
+                            <field name="user_id" options="{'no_create': False}"/>
                     </group>
                     <group> 
                             <field name="email" options="1"/>
@@ -31,6 +32,10 @@
                             <field name="avenue" options="1"/>
                     </group>
                 </sheet>
+                <chatter>
+                    <field name="message_ids" widget="mail_thread" options="{'no_open': True}"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                </chatter>
             </form>
         </field>
     </record>
@@ -42,6 +47,13 @@
             <search string="Responsable Search">
                 <field name="name"/>
                 <field name="phone"/>
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="sexe"/>
+                <field name="province_id"/>
+                <field name="email"/>
+                <field name="quartier"/>
+                <field name="avenue"/>
             </search>
         </field>
     </record>

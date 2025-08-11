@@ -1,15 +1,19 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_province_admin,res.province,model_res_province,cellule_solidaire_ujadi.group_admin_ujadi,1,1,1,1
+access_province_responsable,res.province,model_res_province,cellule_solidaire_ujadi.group_responsable_ujadi,1,1,1,0
+access_province_superviseur,res.province,model_res_province,cellule_solidaire_ujadi.group_superviseur_ujadi,1,1,1,0
 access_ville_admin,res.ville.territoire,model_res_ville_territoire,cellule_solidaire_ujadi.group_admin_ujadi,1,1,1,1
+access_ville_superviseur,res.ville.territoire,model_res_ville_territoire,cellule_solidaire_ujadi.group_superviseur_ujadi,1,1,1,0
+access_ville_responsable,res.ville.territoire,model_res_ville_territoire,cellule_solidaire_ujadi.group_responsable_ujadi,1,1,1,0
 
 access_cellule_admin,cellule.solidaire,model_cellule_solidaire,cellule_solidaire_ujadi.group_admin_ujadi,1,1,1,1
 access_cellule_superviseur,cellule.solidaire,model_cellule_solidaire,cellule_solidaire_ujadi.group_superviseur_ujadi,1,1,1,0
-access_cellule_responsable,cellule.solidaire,model_cellule_solidaire,cellule_solidaire_ujadi.group_responsable_ujadi,1,0,0,0
+access_cellule_responsable,cellule.solidaire,model_cellule_solidaire,cellule_solidaire_ujadi.group_responsable_ujadi,1,1,1,0
 
 access_responsable_admin,responsable.cs,model_responsable_cs,cellule_solidaire_ujadi.group_admin_ujadi,1,1,1,1
 access_responsable_superviseur,responsable.cs,model_responsable_cs,cellule_solidaire_ujadi.group_superviseur_ujadi,1,1,1,0
 
 access_membre_admin,membre.cs,model_membre_cs,cellule_solidaire_ujadi.group_admin_ujadi,1,1,1,1
 access_membre_superviseur,membre.cs,model_membre_cs,cellule_solidaire_ujadi.group_superviseur_ujadi,1,1,1,0
-access_membre_responsable,membre.cs,model_membre_cs,cellule_solidaire_ujadi.group_responsable_ujadi,1,1,0,0
+access_membre_responsable,membre.cs,model_membre_cs,cellule_solidaire_ujadi.group_responsable_ujadi,1,1,1,0
 access_membre_membre,membre.cs,model_membre_cs,cellule_solidaire_ujadi.group_membre_ujadi,1,0,0,0

@@ -21,11 +21,11 @@
         <field name="arch" type="xml">
             <form string="Cellule Solidaire" >
                 <header>
+                <!-- Bouton Membres -->
                      <field name="state" widget="statusbar" statusbar_visible="draft,confirmed" options="{'clickable': '1'}"/>
                 </header>
                 <sheet>
-                    <!-- <group> -->
-                        <group>
+                         <group>
                             <field name="name" placeholder="eg.: LA VIE DE DIEU"/>
                             <field name="entity" placeholder="eg.: GOMA VILLE"/>     
                         </group>
@@ -54,6 +54,10 @@
                         </page>
                     </notebook>
                 </sheet>
+                <chatter>
+                    <field name="message_ids" widget="mail_thread" options="{'no_open': True}"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                </chatter>
             </form>
         </field>
     </record>

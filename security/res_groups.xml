@@ -19,26 +19,43 @@
             <field name="category_id" ref="base.module_category_hidden"/>
         </record>
 
-        <record id="rule_responsable_membres" model="ir.rule">
-            <field name="name">Responsable - Voir ses membres</field>
-            <field name="model_id" ref="model_membre_cs"/>
-            <field name="domain_force">[('cellule_id.responsable_id.user_id', '=', user.id)]</field>
-            <field name="groups" eval="[(4, ref('cellule_solidaire_ujadi.group_responsable_ujadi'))]"/>
-            <field name="perm_read" eval="1"/>
-            <field name="perm_write" eval="1"/>
-        </record>
-
         <!-- Groupe : Membre -->
         <record id="group_membre_ujadi" model="res.groups">
             <field name="name">Membre Cellule</field>
             <field name="category_id" ref="base.module_category_hidden"/>
         </record>
-        <!-- <record id="rule_membre_self" model="ir.rule">
+
+        <!-- Règles de sécurité -->
+        <record id="rule_responsable_membres" model="ir.rule">
+            <field name="name">Responsable - Voir et gérer ses membres</field>
+            <field name="model_id" ref="model_membre_cs"/>
+            <field name="domain_force">[('cellule_id.responsable_id.user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('cellule_solidaire_ujadi.group_responsable_ujadi'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+        </record>
+
+        
+        <record id="rule_membre_self" model="ir.rule">
             <field name="name">Membre - Voir ses propres données</field>
-            <field name="model_id" ref="cellule_solidaire_ujadi.membre_cs"/>
-            <field name="domain_force">[('user_id.id', '=', user.id)]</field>
+            <field name="model_id" ref="model_membre_cs"/>
+            <field name="domain_force">[('user_id', '=', user.id)]</field>
             <field name="groups" eval="[(4, ref('cellule_solidaire_ujadi.group_membre_ujadi'))]"/>
             <field name="perm_read" eval="1"/>
-        </record> -->
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+        </record>
+
+        <record id="rule_superviseur_responsables" model="ir.rule">
+            <field name="name">Superviseur - Voir et gérer responsables</field>
+            <field name="model_id" ref="model_responsable_cs"/>
+            <field name="domain_force">[(1, '=', 1)]</field>  <!-- Accès total sur ce modèle -->
+            <field name="groups" eval="[(4, ref('cellule_solidaire_ujadi.group_superviseur_ujadi'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+        </record>
+        
     </data>
 </odoo>

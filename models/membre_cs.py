@@ -7,10 +7,16 @@ from datetime import date
 class MembreCs(models.Model):
     _name = 'membre.cs'
     _description = 'Identification des membres'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name = fields.Char(string='Noms complets', required=True)
-    phone_number = fields.Char(string='N° Téléphone', required=True)
+    name = fields.Char(string='Noms complets', required=True, tracking=True)
+    phone_number = fields.Char(string='N° Téléphone', required=True, tracking=True)
     province_id = fields.Many2one('res.province', string="Province") 
+    ville = fields.Many2one(
+        'res.ville.territoire',
+        domain="[('province_id', '=', province_id)]",
+        string="Ville/Territoire"
+    )
     province_selected = fields.Boolean(string="Province choisie", compute='_compute_province_selected')
     sexe = fields.Selection([
     ('male', 'M'),
@@ -21,11 +27,6 @@ class MembreCs(models.Model):
     birth_day = fields.Date(string='Date de Naissance')
 
     age = fields.Integer(string="Âge", compute='_compute_age', store=True)
-    ville = fields.Many2one(
-        'res.ville.territoire',
-        domain="[('province_id', '=', province_id)]",
-        string="Ville/Territoire"
-    )
     commune = fields.Char(string="Commune/Chefferie")
     quartier = fields.Char(string="Quartier/Groupement")
     avenue = fields.Char(string="Avenue/Village") 
@@ -68,6 +69,21 @@ class MembreCs(models.Model):
     def _compute_province_selected(self):
         for rec in self:
             rec.province_selected = bool(rec.province_id)
+
+    
+    @api.model_create_multi
+    def create(self, vals_list):
+        user = self.env.user
+        if user.has_group('cellule_solidaire_ujadi.group_responsable_ujadi'):
+            cellule = self.env['cellule.solidaire'].search([('responsable_id.user_id', '=', user.id)], limit=1)
+            if not cellule:
+                raise ValidationError("Vous devez être responsable d'une cellule pour créer un membre.")
+            for vals in vals_list:
+                vals['cellule_id'] = cellule.id
+                membres_count = self.env['membre.cs'].search_count([('cellule_id', '=', cellule.id)])
+        if membres_count + len(vals_list) > 30:
+            raise ValidationError("Vous ne pouvez pas avoir plus de 30 membres dans votre cellule.")
+        return super(MembreCs, self).create(vals_list)
    
 
 
