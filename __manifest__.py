@@ -19,6 +19,7 @@
        'views/membre_cs_views.xml',
        'views/responsable_cs_views.xml',
        'views/cellule_solidaire_menus.xml',
+       'views/livre_syntetique_views.xml',
        'data/cellule_solidaire_data.xml',
        'data/responsable_cs_data.xml',
        'data/membre_cs_data.xml',

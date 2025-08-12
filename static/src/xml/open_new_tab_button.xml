@@ -1,0 +1,7 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="cellule_solidaire_ujadi.OpenNewTabButtonTemplate">
+        <button type="button" class="btn btn-primary open-new-tab-btn">
+            Ouvrir dans un nouvel onglet
+        </button>
+    </t>
+</templates>

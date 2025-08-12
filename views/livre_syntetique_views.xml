@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Vue Formulaire principale pour livre.syntetique -->
+    <record id="view_livre_syntetique_form" model="ir.ui.view">
+        <field name="name">livre.syntetique.form</field>
+        <field name="model">livre.syntetique</field>
+        <field name="arch" type="xml">
+            <form string="Livre Synthétique">
+                <sheet>
+                    <group string="Informations du membre" colspan="4">
+                        <field name="membre_name" readonly="1"/>
+                    </group>
+                        <field name="cellule_id" options="{'no_create': True}"/>
+                   <group>
+                    <field name="part_price"/>
+                   </group>
+                    <group string="Les Part Pour Chaque Semaines " colspan="4" >
+                        <group>
+                        <field name="first_week" class="oe_inline"/>
+                        </group>
+                        <group>
+                        <field name="second_week" class="oe_inline"/>
+                        </group>
+                        <group>
+                        <field name="third_week" class="oe_inline"/>
+                        </group>
+                        <group>
+                        <field name="fourth_week" class="oe_inline"/>
+                        </group>                     
+                    </group>
+                     <group>
+                         <!-- <field name="membre_id"/>
+                        <field name="cellule_id"/> -->
+                        
+                        <field name="nombre_part"/>
+                        <field name="montant_chiffre" readonly="1"/>
+                        <field name="debt"/>
+                        <field name="sign_responsable"/>
+                        <field name="sign_membre"/>
+                        <field name="date"/>
+                        <field name="currency"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_confirm" type="object" string="Confirmer" class="btn-primary"/>
+                    <button name="action_draft" type="object" string="Mettre en Brouillon" class="btn-secondary"/>
+                    <button string="Fermer" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_livre_syntetique_tree" model="ir.ui.view">
+    <field name="name">livre.syntetique.tree</field>
+    <field name="model">livre.syntetique</field>
+    <field name="arch" type="xml">
+        <list string="Livre Synthétique">
+            <field name="membre_id"/>
+            <field name="cellule_id"/>
+            <field name="part_price"/>
+            <field name="nombre_part"/>
+            <field name="montant_chiffre"/>
+            <field name="total_month"/>
+            <field name="debt"/>
+            <field name="date"/>
+            <field name="currency"/>
+            <field name="active"/>
+        </list>
+    </field>
+    </record>
+
+    <!-- <menuitem id="menu_livre_syntetique_root" name="Livre Synthétique" parent="base.menu_custom" sequence="10"/> -->
+    <!-- <menuitem id="menu_livre_syntetique" name="Livres" parent="menu_livre_syntetique_root" action="action_livre_syntetique"/> -->
+    
+</odoo>

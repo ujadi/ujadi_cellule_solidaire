@@ -17,3 +17,8 @@ access_membre_admin,membre.cs,model_membre_cs,cellule_solidaire_ujadi.group_admi
 access_membre_superviseur,membre.cs,model_membre_cs,cellule_solidaire_ujadi.group_superviseur_ujadi,1,1,1,0
 access_membre_responsable,membre.cs,model_membre_cs,cellule_solidaire_ujadi.group_responsable_ujadi,1,1,1,0
 access_membre_membre,membre.cs,model_membre_cs,cellule_solidaire_ujadi.group_membre_ujadi,1,0,0,0
+
+cellule_solidaire_ujadi.access_livre_syntetique,access_livre_syntetique,cellule_solidaire_ujadi.model_livre_syntetique,base.group_user,1,1,1,0
+access_membre_superviseur,livre.syntetique,model_livre_syntetique,cellule_solidaire_ujadi.group_superviseur_ujadi,1,1,1,0
+access_membre_responsable,livre.syntetique,model_livre_syntetique,cellule_solidaire_ujadi.group_responsable_ujadi,1,1,1,0
+access_membre_membre,livre.syntetique,model_livre_syntetique,cellule_solidaire_ujadi.group_membre_ujadi,1,1,1,0

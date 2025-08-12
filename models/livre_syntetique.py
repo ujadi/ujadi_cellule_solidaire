@@ -13,10 +13,15 @@ class LivreSyntetique(models.Model):
         help='Prix unitaire d’une part, en Franc Congolais ou en Dollar Américain.'
         ) # Prix de Part calculé en franc Congolais ou En Dollard Américain
     
-    membre_id = fields.Many2one('membre.cs', string="Membre", required=True) # Membre de la cellule solidaire
-    cellule_id = fields.Many2one('cellule.solidaire', string="Cellule Solidaire", required=True) # Cellule Solidaire
+    membre_id = fields.Many2one('membre.cs', string="Membre",
+                                #  required=True
+                                 ) # Membre de la cellule solidaire
+    cellule_id = fields.Many2one('cellule.solidaire', string="Cellule Solidaire",
+                                #   required=True
+                                  ) # Cellule Solidaire
     nombre_part = fields.Integer(string='Nombre des Part',
-        required=True,tracking=True,
+        # required=True,
+        tracking=True,
         help='Nombre total de parts, calculé en Franc Congolais ou en Dollar Américain.') # Nombre de Part calculé en franc Congolais ou En Dollard Américain
     montant_chiffre = fields.Integer(
         string='Montant en chiffre', 
@@ -26,7 +31,7 @@ class LivreSyntetique(models.Model):
         )
     
     # Montant en chiffre calculé en franc Congolais ou En Dollard Américain
-    first_week = fields.Char(string='1ere Semaine') # si une part_price est de 2000 FC, si le membre vient avec 4 000fc cela veut dire qu'il a 2 parts
+    first_week = fields.Integer(string='1ere Semaine',tracking=True) # si une part_price est de 2000 FC, si le membre vient avec 4 000fc cela veut dire qu'il a 2 parts
     # donc il viens d'épargner 2 parts cette semaine, 
     second_week = fields.Integer(string='2eme Semaine',tracking=True)
     third_week = fields.Integer(string='3eme Semaine',tracking=True)
@@ -41,6 +46,7 @@ class LivreSyntetique(models.Model):
     ('fc', 'Franc Congolais'),
     ('usd', 'Dollar Américain')
     ], string='Devise', required=True)
+    membre_name = fields.Char(string="Nom du Membre", related='membre_id.name', readonly=True, store=True)
 
     active = fields.Boolean(string='Actif', default=True) # pour savoir si le livre est actif ou pas
 
@@ -73,7 +79,7 @@ class LivreSyntetique(models.Model):
             'res_model': 'membre.cs',
             'view_mode': 'form',
             'res_id': self.membre_id.id,
-            'target': 'current',
+            'target': 'new',
         }   
     
 

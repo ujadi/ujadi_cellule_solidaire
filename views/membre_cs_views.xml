@@ -7,6 +7,7 @@
                 <field name="name"/>
                 <field name="phone_number"/>
                 <field name="sexe"/>
+
                 <field name="province_id"/>
                 <field name="ville"/>
                 <field name="commune"/>
@@ -22,6 +23,15 @@
         <field name="model">membre.cs</field>
         <field name="arch" type="xml">
             <form string="Les Membres Cellule Solidaire">
+            <header>
+                <button name="action_open_livre_syntetique"
+                    type="object"
+                    string="Voir Livre Synthétique"
+                    icon="fa-book"
+                    class="oe_stat_button btn btn-success"
+                    
+                    />
+            </header>
                 <sheet>
                     <group>
                         <group>

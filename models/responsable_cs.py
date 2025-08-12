@@ -6,7 +6,11 @@ class ResponsableCs(models.Model):
     _description = 'Responsable Cellule Solidaire'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name = fields.Char(string="Nom du responsable", required=True)
+    name = fields.Char(
+        string="Nom du responsable",
+        required=True
+        
+        )
     phone = fields.Char(string="Téléphone", required=True)
     sexe = fields.Selection([
     ('male', 'M'),
@@ -16,7 +20,7 @@ class ResponsableCs(models.Model):
     
     province_id = fields.Many2one('res.province', string="Province",tracking=True)
     cellule_ids = fields.One2many('cellule.solidaire', 'responsable_id', string="Cellules",tracking=True)  # Corrected to match the new model name
-    user_id = fields.Many2one('res.users', string='Utilisateur lié',tracking=True)
+    user_id = fields.Many2one('res.users', string='Responsable', required=True, tracking=True)
     email = fields.Char(string="Email")
     quartier = fields.Char(string="Quartier")  
     avenue = fields.Char(string="Avenue")  
