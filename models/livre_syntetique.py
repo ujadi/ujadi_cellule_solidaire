@@ -8,11 +8,12 @@ class LivreSyntetique(models.Model):
 
 
     part_price = fields.Integer(
-        string='Prix de Part', 
+        string='Valeur d\'Une Part', 
         required=True,
         help='Prix unitaire d’une part, en Franc Congolais ou en Dollar Américain.'
         ) # Prix de Part calculé en franc Congolais ou En Dollard Américain
-    
+    cycle = fields.Char(string='Cycle', tracking=True) # Cycle de l'épargne
+    Durée = fields.Char(string='Durée', tracking=True) # Durée de l'épargne
     membre_id = fields.Many2one('membre.cs', string="Membre",
                                 #  required=True
                                  ) # Membre de la cellule solidaire
@@ -24,19 +25,27 @@ class LivreSyntetique(models.Model):
         tracking=True,
         help='Nombre total de parts, calculé en Franc Congolais ou en Dollar Américain.') # Nombre de Part calculé en franc Congolais ou En Dollard Américain
     montant_chiffre = fields.Integer(
-        string='Montant en chiffre', 
+        string='Montant Total en chiffre', 
         help='Montant total en chiffres, calculé comme (prix de la part U+00d7 nombre de parts).',
         store=True,
         compute='_compute_montant_chiffre'        
         )
     
     # Montant en chiffre calculé en franc Congolais ou En Dollard Américain
-    first_week = fields.Integer(string='1ere Semaine',tracking=True) # si une part_price est de 2000 FC, si le membre vient avec 4 000fc cela veut dire qu'il a 2 parts
     # donc il viens d'épargner 2 parts cette semaine, 
-    second_week = fields.Integer(string='2eme Semaine',tracking=True)
-    third_week = fields.Integer(string='3eme Semaine',tracking=True)
-    fourth_week = fields.Integer(string='4eme Semaine',tracking=True)
-    total_month = fields.Integer(string='Total Mensuel',tracking=True) # Total Mensuel calculé en franc Congolais ou En Dollard Américain 
+    first_week = fields.Integer(string='Nombre de Part Pour La 1ère Semaine',tracking=True) # si une part_price est de 2000 FC, si le membre vient avec 4 000fc cela veut dire qu'il a 2 parts
+    second_week = fields.Integer(string='Nombre de Part Pour La 2ème Semaine',tracking=True)
+    third_week = fields.Integer(string='Nombre de Part Pour La 3ème Semaine',tracking=True)
+    fourth_week = fields.Integer(string='Nombre de Part Pour La 4ème Semaine',tracking=True)
+    total_month = fields.Integer(string='Total Mensuel Des Parts', compute='_compute_totals', store=True)
+    
+
+    first_week_amount = fields.Integer(string='Montant 1ère Semaine', compute='_compute_week_amounts', store=True)
+    second_week_amount = fields.Integer(string='Montant 2ème Semaine', compute='_compute_week_amounts', store=True)
+    third_week_amount = fields.Integer(string='Montant 3ème Semaine', compute='_compute_week_amounts', store=True)
+    fourth_week_amount = fields.Integer(string='Montant 4ème Semaine', compute='_compute_week_amounts', store=True)
+
+    # Total Mensuel calculé en franc Congolais ou En Dollard Américain 
     #en fonction du nombre de part ajouté chaque semaine
     debt = fields.Integer(string='Dette',tracking=True) #par defaut Calculé au double de ce que le membre a épargné dans la cellule mais il peut être modifié selon ses choix
     sign_responsable = fields.Char(string='Signature du Responsable')
@@ -61,7 +70,11 @@ class LivreSyntetique(models.Model):
     ('fourth_week_positive', 'CHECK(fourth_week >= 0)', 'La quatrième semaine doit être positive ou nulle.'),
     ('total_month_positive', 'CHECK(total_month >= 0)', 'Le total mensuel doit être positif ou nul.'),
 ]
-
+    
+    state = fields.Selection([
+    ('draft', 'Brouillon'),
+    ('confirmed', 'Confirmé'),
+    ], default='draft', string='État', tracking=True)
 
     def action_confirm(self):
         """Change the state to confirmed."""
@@ -88,4 +101,20 @@ class LivreSyntetique(models.Model):
         """Compute the total amount in figures."""
         for record in self:
             record.montant_chiffre = record.part_price * record.nombre_part if record.part_price and record.nombre_part else 0
+
+    @api.depends('part_price', 'first_week', 'second_week', 'third_week', 'fourth_week')
+    def _compute_week_amounts(self):
+        for record in self:
+            record.first_week_amount = (record.first_week or 0) * (record.part_price or 0)
+            record.second_week_amount = (record.second_week or 0) * (record.part_price or 0)
+            record.third_week_amount = (record.third_week or 0) * (record.part_price or 0)
+            record.fourth_week_amount = (record.fourth_week or 0) * (record.part_price or 0)
+
+    @api.depends('first_week', 'second_week', 'third_week', 'fourth_week',
+                 'first_week_amount', 'second_week_amount', 'third_week_amount', 'fourth_week_amount')
+    def _compute_totals(self):
+        for record in self:
+            record.nombre_part = (record.first_week or 0) + (record.second_week or 0) + (record.third_week or 0) + (record.fourth_week or 0)
+            record.total_month = record.nombre_part  # Si tu veux garder pareil
+            record.montant_chiffre = (record.first_week_amount or 0) + (record.second_week_amount or 0) + (record.third_week_amount or 0) + (record.fourth_week_amount or 0)
             

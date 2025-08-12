@@ -7,7 +7,6 @@
                 <field name="name"/>
                 <field name="phone_number"/>
                 <field name="sexe"/>
-
                 <field name="province_id"/>
                 <field name="ville"/>
                 <field name="commune"/>
@@ -50,7 +49,8 @@
                                 /><field name="commune"/>
                             <field name="quartier"/>
                             <field name="avenue" /> 
-                            <field name="photo_identity" widget="image" class="oe_avatar"/>                          
+                            <field name="photo_identity" widget="image" class="oe_avatar"/>     
+                            <field name="cellule_id"/>              
                         </group>
                     </group>
                 </sheet>

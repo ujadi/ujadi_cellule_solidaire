@@ -10,30 +10,38 @@
                     <group string="Informations du membre" colspan="4">
                         <field name="membre_name" readonly="1"/>
                     </group>
-                        <field name="cellule_id" options="{'no_create': True}"/>
-                   <group>
-                    <field name="part_price"/>
-                   </group>
-                    <group string="Les Part Pour Chaque Semaines " colspan="4" >
+                    <field name="cellule_id" options="{'no_create': True}"/>
+                    <group>
                         <group>
-                        <field name="first_week" class="oe_inline"/>
+                            <field name="nombre_part" readonly="1"/>
                         </group>
                         <group>
-                        <field name="second_week" class="oe_inline"/>
+                            <field name="montant_chiffre" readonly="1"/>
                         </group>
                         <group>
-                        <field name="third_week" class="oe_inline"/>
+                            <field name="part_price"/>
+                        </group>
+                    </group>
+                    <group string="Les Parts Pour Chaque Semaine" colspan="4">
+                        <group>
+                            <field name="first_week" class="oe_inline"/>
+                            <field name="first_week_amount" readonly="1" class="oe_inline"/>
                         </group>
                         <group>
-                        <field name="fourth_week" class="oe_inline"/>
+                            <field name="second_week" class="oe_inline"/>
+                            <field name="second_week_amount" readonly="1" class="oe_inline"/>
+                        </group>
+                        <group>
+                            <field name="third_week" class="oe_inline"/>
+                            <field name="third_week_amount" readonly="1" class="oe_inline"/>
+                        </group>
+                        <group>
+                            <field name="fourth_week" class="oe_inline"/>
+                            <field name="fourth_week_amount" readonly="1" class="oe_inline"/>
                         </group>                     
                     </group>
-                     <group>
-                         <!-- <field name="membre_id"/>
-                        <field name="cellule_id"/> -->
-                        
-                        <field name="nombre_part"/>
-                        <field name="montant_chiffre" readonly="1"/>
+                    <group>
+                        <field name="total_month" readonly="1"/>
                         <field name="debt"/>
                         <field name="sign_responsable"/>
                         <field name="sign_membre"/>
@@ -42,6 +50,10 @@
                         <field name="active"/>
                     </group>
                 </sheet>
+                <chatter>
+                    <field name="message_ids" widget="mail_thread" options="{'no_open': True}"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                </chatter>
                 <footer>
                     <button name="action_confirm" type="object" string="Confirmer" class="btn-primary"/>
                     <button name="action_draft" type="object" string="Mettre en Brouillon" class="btn-secondary"/>
@@ -51,26 +63,44 @@
         </field>
     </record>
 
+    <!-- Vue Liste / Tree -->
     <record id="view_livre_syntetique_tree" model="ir.ui.view">
-    <field name="name">livre.syntetique.tree</field>
-    <field name="model">livre.syntetique</field>
-    <field name="arch" type="xml">
-        <list string="Livre Synthétique">
-            <field name="membre_id"/>
-            <field name="cellule_id"/>
-            <field name="part_price"/>
-            <field name="nombre_part"/>
-            <field name="montant_chiffre"/>
-            <field name="total_month"/>
-            <field name="debt"/>
-            <field name="date"/>
-            <field name="currency"/>
-            <field name="active"/>
-        </list>
-    </field>
+        <field name="name">livre.syntetique.tree</field>
+        <field name="model">livre.syntetique</field>
+        <field name="arch" type="xml">
+            <list string="Livre Synthétique">
+                <field name="membre_id"/>
+                <field name="cellule_id"/>
+                <field name="part_price"/>
+                <field name="nombre_part"/>
+                <field name="montant_chiffre"/>
+                <field name="first_week_amount" string="Montant 1ère Semaine"/>
+                <field name="second_week_amount" string="Montant 2ème Semaine"/>
+                <field name="third_week_amount" string="Montant 3ème Semaine"/>
+                <field name="fourth_week_amount" string="Montant 4ème Semaine"/>
+                <field name="total_month"/>
+                <field name="debt"/>
+                <field name="date"/>
+                <field name="currency"/>
+                <field name="active"/>
+            </list>
+        </field>
     </record>
+    <record id="action_livre_syntetique_operations" model="ir.actions.act_window">
+        <field name="name">Opérations Livre Synthétique</field>
+        <field name="res_model">livre.syntetique</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+    </record>
+    <!-- <record id="view_livre_syntetique_search_with_button" model="ir.ui.view">
+        <field name="name">livre.syntetique.search.with.button</field>
+        <field name="model">livre.syntetique</field>
+        <field name="inherit_id" ref="cellule_solidaire_ujadi.view_livre_syntetique_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <button name="%(action_livre_syntetique_operations)d" type="action" string="Voir Opérations" icon="fa-list"/>
+            </xpath>
+        </field>
+    </record> -->
 
-    <!-- <menuitem id="menu_livre_syntetique_root" name="Livre Synthétique" parent="base.menu_custom" sequence="10"/> -->
-    <!-- <menuitem id="menu_livre_syntetique" name="Livres" parent="menu_livre_syntetique_root" action="action_livre_syntetique"/> -->
-    
 </odoo>

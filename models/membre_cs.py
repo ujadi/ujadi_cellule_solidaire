@@ -113,7 +113,7 @@ class MembreCs(models.Model):
             'res_model': 'livre.syntetique',
             'view_mode': 'form',
             'res_id': livre.id,
-            'target': 'new',
+            'target': 'current',
         }
   
    
