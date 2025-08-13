@@ -21,8 +21,20 @@
         <field name="arch" type="xml">
             <form string="Cellule Solidaire" >
                 <header>
-                <!-- Bouton Membres -->
-                     <field name="state" widget="statusbar" statusbar_visible="draft,confirmed" options="{'clickable': '1'}"/>
+                <!-- Bouton Membres -->                     
+                     <button name="action_confirm"
+                             string="Confirmer"
+                            type="object" 
+                            state="draft"
+                            class="btn-success"/>
+
+                    <button name="action_open_set_draft_wizard"
+                            string="Remettre en Draft"
+                            type="object"
+                            state="confirmed"
+                            class="btn-secondary"/>
+                            
+                <field name="state" widget="statusbar" statusbar_visible="draft,confirmed"/>
                 </header>
                 <sheet>
                          <group>
@@ -62,6 +74,50 @@
         </field>
     </record>
 
+
+     <record id="view_cellule_solidaire_kanban" model="ir.ui.view">
+        <field name="name">cellule.solidaire.kanban</field>
+        <field name="model">cellule.solidaire</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state">
+                <field name="name"/>
+                <field name="responsable_id"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click cellule_{{ record.state.raw_value }}">
+                            <div class="o_kanban_record_title">
+                                <strong><field name="name"/></strong>
+                            </div>
+                            <div class="o_kanban_tags">
+                                <span>
+                                    <t t-if="record.responsable_id.raw_value">
+                                        👤 <t t-if="record.responsable_id.name"/>
+                                    </t>
+                                    <t t-else="">
+                                        🚫 Pas de responsable
+                                    </t>
+                                </span>
+                            </div>
+                            <div class="o_kanban_footer mt8">
+                                <t t-if="record.state.raw_value == 'draft'">
+                                    <button type="object" name="action_confirm" class="btn btn-primary btn-sm">
+                                        ✅ Confirmer
+                                    </button>
+                                </t>
+                                <t t-if="record.state.raw_value == 'confirmed'">
+                                    <button type="object" name="action_open_set_draft_wizard" class="btn btn-secondary btn-sm">
+                                        🔄 Remettre en Draft
+                                    </button>
+                                </t>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
     <record id="cellule_solidaire_view_search" model="ir.ui.view">
         <field name="name">cellule.solidaire.search</field>
         <field name="model">cellule.solidaire</field>
@@ -79,7 +135,6 @@
     <record id="cellule_solidaire_action" model="ir.actions.act_window">
         <field name="name">Cellule Solidaire Action</field>
         <field name="res_model">cellule.solidaire</field>
-        <field name="view_mode">list,form,search</field>
+        <field name="view_mode">kanban,list,form,search</field>
     </record>
-
 </odoo>

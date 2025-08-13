@@ -26,6 +26,11 @@
        'data/res_province_data.xml',
        'data/res_ville_territoire_data.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'cellule_solidaire_ujadi/static/src/css/cellule_solidaire.css',
+            ],
+    },
     'installable': True,
     'application': True,
     'auto_install': False,

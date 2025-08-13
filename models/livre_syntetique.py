@@ -58,7 +58,9 @@ class LivreSyntetique(models.Model):
     membre_name = fields.Char(string="Nom du Membre", related='membre_id.name', readonly=True, store=True)
 
     active = fields.Boolean(string='Actif', default=True) # pour savoir si le livre est actif ou pas
-
+    # taux = fields.Float("Taux de change", help="Taux FC pour 1 USD au moment du paiement")
+    # montant_fc = fields.Float("Montant en FC", compute="_compute_montant_fc", store=True)
+    compte_epargne_id = fields.Many2one('compte.epargne', string="Compte Épargne", readonly=True)
     _sql_constraints = [
     ('part_price_positive', 'CHECK(part_price > 0)', 'Le prix de la part doit être strictement positif.'),
     ('nombre_part_positive', 'CHECK(nombre_part >= 0)', 'Le nombre de parts doit être positif ou nul.'),

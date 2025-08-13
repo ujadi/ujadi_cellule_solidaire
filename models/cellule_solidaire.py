@@ -1,5 +1,5 @@
 from odoo import models, fields, api
-from odoo.exceptions import ValidationError
+from odoo.exceptions import ValidationError, UserError
 
 
 
@@ -23,7 +23,7 @@ class CelluleSolidaire(models.Model):
     state = fields.Selection([
         ('draft', 'Draft'),
         ('confirmed', 'Confirmed')
-    ], default='draft')
+    ], string="State", default="draft")
     
 
 
@@ -32,3 +32,22 @@ class CelluleSolidaire(models.Model):
         for rec in self:
             if len(rec.membre_ids) > 30:
                 raise ValidationError("Une cellule solidaire ne peut pas avoir plus de 30 membres.")
+
+    
+    def action_confirm(self):
+        for record in self:
+            if not record.responsable_id:
+                raise UserError("Impossible de confirmer : veuillez définir un responsable pour cette cellule.")
+            record.state = "confirmed"
+
+    def action_open_set_draft_wizard(self):
+        return {
+            'name': 'Remettre en Draft',
+            'type': 'ir.actions.act_window',
+            'res_model': 'cellule.set.draft.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'active_id': self.id,
+            }   
+        }
