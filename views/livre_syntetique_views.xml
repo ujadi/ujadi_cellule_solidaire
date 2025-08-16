@@ -6,50 +6,72 @@
         <field name="model">livre.syntetique</field>
         <field name="arch" type="xml">
             <form string="Livre Synthétique">
+            <header>
+                    <button name="action_responsable" type="object" string="Saisie Responsable"
+                             class="btn-primary"/>
+                    <button name="action_validate_member" type="object" string="Validation Membre"
+                             class="btn-success"/>
+                    <button name="action_supervise" type="object" string="Validation Superviseur"
+                             class="btn-secondary"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,responsable,validated,supervised"/>
+                </header>
                 <sheet>
-                    <group string="Informations du membre" colspan="4">
-                        <field name="membre_name" readonly="1"/>
+                    <group string="Informations du membre" col="4">
+                        <group>
+                            <field name="photo_passport" widget="image" class="oe_avatar" options="{'preview_image': 'photo_passport'}" />
+                         </group>   
+                        <group>
+                            <field name="membre_name" readonly="1"/>
+                        </group>
+                        <group>
+                        <field name="cellule_solidaire_name"/>
+                        </group>
+                        <group>
+                            <field name="respo_name" readonly="1"/>
+                        </group>
                     </group>
-                    <field name="cellule_id" options="{'no_create': True}"/>
+
+                    <group string="Parts par semaine">
+                            <group>
+                                <field name="part_price_first_week"/>
+                                <field name="first_week"/>
+                                <field name="first_week_amount" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="part_price_second_week"/>
+                                <field name="second_week"/>
+                                <field name="second_week_amount" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="part_price_third_week"/>
+                                <field name="third_week"/>
+                                <field name="third_week_amount" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="part_price_fourth_week"/>
+                                <field name="fourth_week"/>
+                                <field name="fourth_week_amount" readonly="1"/>
+                            </group>
+                    </group>
                     <group>
+                    
+                    <group string="Totaux">
                         <group>
-                            <field name="nombre_part" readonly="1"/>
-                        </group>
-                        <group>
-                            <field name="montant_chiffre" readonly="1"/>
-                        </group>
-                        <group>
-                            <field name="part_price"/>
-                        </group>
-                    </group>
-                    <group string="Les Parts Pour Chaque Semaine" colspan="4">
-                        <group>
-                            <field name="first_week" class="oe_inline"/>
-                            <field name="first_week_amount" readonly="1" class="oe_inline"/>
-                        </group>
-                        <group>
-                            <field name="second_week" class="oe_inline"/>
-                            <field name="second_week_amount" readonly="1" class="oe_inline"/>
-                        </group>
-                        <group>
-                            <field name="third_week" class="oe_inline"/>
-                            <field name="third_week_amount" readonly="1" class="oe_inline"/>
-                        </group>
-                        <group>
-                            <field name="fourth_week" class="oe_inline"/>
-                            <field name="fourth_week_amount" readonly="1" class="oe_inline"/>
-                        </group>                     
-                    </group>
-                    <group>
-                        <field name="social"/>
-                        <field name="social_debt"/>
                         <field name="total_month" readonly="1"/>
-                        <field name="debt"/>
-                        <field name="sign_responsable"/>
-                        <field name="sign_membre"/>
-                        <field name="date"/>
-                        <field name="currency"/>
-                        <field name="active"/>
+                        </group>
+                        <group>
+                        <field name="montant_chiffre" readonly="1"/>
+                        </group>
+                    </group>
+                    </group>
+                    <group string="Validation et Signatures">
+                        <group>
+                        <field name="digital_signature" widget="image" 
+                               options="{'preview_image': 'digital_signature'}"/>
+                        </group>
+                        <group>
+                        <field name="justificatif" widget="binary"/>
+                        </group>
                     </group>
                     <notebook>
                         <page string="Détails socials">
@@ -80,25 +102,16 @@
             <list string="Livre Synthétique">
                 <field name="membre_id"/>
                 <field name="cellule_id"/>
-                <field name="part_price"/>
-                <field name="nombre_part"/>
-                <field name="montant_chiffre"/>
-                <field name="first_week_amount" string="Montant 1ère Semaine"/>
-                <field name="second_week_amount" string="Montant 2ème Semaine"/>
-                <field name="third_week_amount" string="Montant 3ème Semaine"/>
-                <field name="fourth_week_amount" string="Montant 4ème Semaine"/>
                 <field name="total_month"/>
-                <field name="debt"/>
-                <field name="date"/>
-                <field name="currency"/>
-                <field name="active"/>
+                <field name="montant_chiffre"/>
+                <field name="state"/>
             </list>
         </field>
     </record>
     <record id="action_livre_syntetique_operations" model="ir.actions.act_window">
         <field name="name">Opérations Livre Synthétique</field>
         <field name="res_model">livre.syntetique</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="target">current</field>
     </record>
     <!-- <record id="view_livre_syntetique_search_with_button" model="ir.ui.view">
