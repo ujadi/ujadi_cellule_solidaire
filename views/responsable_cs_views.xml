@@ -11,6 +11,7 @@
                 <field name="email" invisible="1"/>
                 <field name="quartier" invisible="1"/>
                 <field name="avenue" invisible="1"/>
+                <field name="cellule_ids"/>
             </list>
         </field>
     </record>
@@ -30,6 +31,7 @@
                             <field name="email" options="1"/>
                             <field name="quartier" options="1"/>
                             <field name="avenue" options="1"/>
+                            <field name="cellule_ids" />
                     </group>
                 </sheet>
                 <chatter>
@@ -54,6 +56,7 @@
                 <field name="email"/>
                 <field name="quartier"/>
                 <field name="avenue"/>
+                <field name="cellule_ids" widget="many2many_tags" options="{'no_create': True}"/>
             </search>
         </field>
     </record>

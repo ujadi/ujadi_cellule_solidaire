@@ -1,1 +1,1 @@
-from . import delete_member_wizard
+from . import cellule_set_draft_wizard

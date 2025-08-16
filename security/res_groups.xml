@@ -47,15 +47,7 @@
             <field name="perm_create" eval="0"/>
         </record>
 
-        <record id="rule_superviseur_responsables" model="ir.rule">
-            <field name="name">Superviseur - Voir et gérer responsables</field>
-            <field name="model_id" ref="model_responsable_cs"/>
-            <field name="domain_force">[(1, '=', 1)]</field>  <!-- Accès total sur ce modèle -->
-            <field name="groups" eval="[(4, ref('cellule_solidaire_ujadi.group_superviseur_ujadi'))]"/>
-            <field name="perm_read" eval="1"/>
-            <field name="perm_write" eval="1"/>
-            <field name="perm_create" eval="1"/>
-        </record>
+       
         
     </data>
 </odoo>

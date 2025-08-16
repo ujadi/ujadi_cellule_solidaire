@@ -7,16 +7,12 @@ class LivreSyntetique(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
 
-    part_price = fields.Integer(
-        string='Valeur d\'Une Part', 
-        required=True,
-        help='Prix unitaire d’une part, en Franc Congolais ou en Dollar Américain.'
-        ) # Prix de Part calculé en franc Congolais ou En Dollard Américain
+    
     cycle = fields.Char(string='Cycle', tracking=True) # Cycle de l'épargne
     Durée = fields.Char(string='Durée', tracking=True) # Durée de l'épargne
     membre_id = fields.Many2one('membre.cs', string="Membre",
                                 #  required=True
-                                 ) # Membre de la cellule solidaire
+                                 ) 
     cellule_id = fields.Many2one('cellule.solidaire', string="Cellule Solidaire",
                                 #   required=True
                                   ) # Cellule Solidaire
@@ -56,10 +52,9 @@ class LivreSyntetique(models.Model):
     ('usd', 'Dollar Américain')
     ], string='Devise', required=True)
     membre_name = fields.Char(string="Nom du Membre", related='membre_id.name', readonly=True, store=True)
-
-    active = fields.Boolean(string='Actif', default=True) # pour savoir si le livre est actif ou pas
-    # taux = fields.Float("Taux de change", help="Taux FC pour 1 USD au moment du paiement")
-    # montant_fc = fields.Float("Montant en FC", compute="_compute_montant_fc", store=True)
+    social = fields.Integer(string="Social", help="Montant social à payer par chaque semaine", default=1000) 
+    social_debt = fields.Integer(string="Dette Sociale", help="Montant social à payer par le membre", default=0,readonly=True)
+    active = fields.Boolean(string='Actif', default=True)
     compte_epargne_id = fields.Many2one('compte.epargne', string="Compte Épargne", readonly=True)
     _sql_constraints = [
     ('part_price_positive', 'CHECK(part_price > 0)', 'Le prix de la part doit être strictement positif.'),
@@ -73,6 +68,7 @@ class LivreSyntetique(models.Model):
     ('total_month_positive', 'CHECK(total_month >= 0)', 'Le total mensuel doit être positif ou nul.'),
 ]
     
+
     state = fields.Selection([
     ('draft', 'Brouillon'),
     ('confirmed', 'Confirmé'),
@@ -120,3 +116,9 @@ class LivreSyntetique(models.Model):
             record.total_month = record.nombre_part  # Si tu veux garder pareil
             record.montant_chiffre = (record.first_week_amount or 0) + (record.second_week_amount or 0) + (record.third_week_amount or 0) + (record.fourth_week_amount or 0)
             
+
+    # @api.onchange('first_week', 'second_week', 'third_week', 'fourth_week')
+    # def _update_social_debt(self):
+    #     """Update the social debt based on the number of parts."""
+    #     for record in self:
+    #         if record.fir

@@ -41,6 +41,8 @@
                         </group>                     
                     </group>
                     <group>
+                        <field name="social"/>
+                        <field name="social_debt"/>
                         <field name="total_month" readonly="1"/>
                         <field name="debt"/>
                         <field name="sign_responsable"/>
@@ -49,6 +51,13 @@
                         <field name="currency"/>
                         <field name="active"/>
                     </group>
+                    <notebook>
+                        <page string="Détails socials">
+                            <!-- <field name="operation_ids" context="{'default_livre_syntetique_id': active_id}"/> -->
+                            <field name="social"/>
+                            <field name="social_debt" readonly="1"/>
+                        </page>
+                    </notebook>
                 </sheet>
                 <chatter>
                     <field name="message_ids" widget="mail_thread" options="{'no_open': True}"/>
